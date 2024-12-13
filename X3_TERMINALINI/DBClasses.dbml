@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB" Class="DBClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="STOLOC">
+    <Type Name="STOLOC">
+      <Column Name="STOFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LOC_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WRH_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="OCPCOD_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="LOCTYP_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCCAT_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="LOCNUMFMT_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PPSSEQ_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MONITMFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="DEDFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="REAFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="FRGMGTMOD_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="TEMLTI_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="FILMGTFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="AUZSST_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AVADAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="AVAHOU_0" Type="System.String" DbType="nvarchar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ALLUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ALLDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ALLHOU_0" Type="System.String" DbType="nvarchar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MAXAUZWEI_0" Type="System.Decimal" DbType="decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="WID_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="HEI_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="DTH_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="LOKSTA_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="CUNLOKFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PCU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PCUSTUCOE_0" Type="System.Decimal" DbType="decimal(18,7) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYPCU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="MAXQTYPCU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSUTX">
+    <Type Name="YTSUTX">
+      <Column Name="USR_TERM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PSW_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="USR_X3_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCR_0" Type="System.String" DbType="nvarchar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ATTIVO_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="FCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL1_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL2_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL3_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL4_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL5_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL6_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL7_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL8_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ABIL9_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSLOG">
+    <Type Name="YTSLOG">
+      <Column Name="UPDTICK_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="USR_X3_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="USR_TERM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FUNZIONE_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESITO_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MESSAGGIO_0" Type="System.String" DbType="nvarchar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_0" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_1" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_2" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_3" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_4" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_5" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_6" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_7" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_8" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_9" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_10" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_11" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_12" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_13" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VARIABILE_14" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="AUUID_0" Type="System.Byte[]" DbType="binary(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CREUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="STOPRED">
+    <Type Name="STOPRED">
+      <Column Name="PRHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PRELIN_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ORITYP_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ORINUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ORILIN_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ORISEQ_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ORITYPSCO_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="LINTYP_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES1_0" Type="System.String" DbType="nvarchar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="REOLOC_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SEQ_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="PACQTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ALLQTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="SHTQTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="ALLTYP_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="OALQTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="STOMGTCOD_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PCU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PCUSTUCOE_0" Type="System.Decimal" DbType="decimal(18,7) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCDES_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCTYPDES_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PCK_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PCKCAP_0" Type="System.Decimal" DbType="decimal(18,7) NOT NULL" CanBeNull="false" />
+      <Column Name="PRPTEX_0" Type="System.String" DbType="nvarchar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="FLGVT_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="FLGANN_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="PCKFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="EXPNUM_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="CREUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CREDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CREDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="AUUID_0" Type="System.Byte[]" DbType="binary(16) NOT NULL" CanBeNull="false" />
+      <Column Name="XXI0_CLGFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="STOPREH_STOPRED" Member="STOPREH" ThisKey="PRHNUM_0" OtherKey="PRHNUM_0" Type="STOPREH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="STOPREH">
+    <Type Name="STOPREH">
+      <Column Name="PRHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STOFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CPY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ORIPRH_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PRLNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SDHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SDHTYP_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCORD_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="DLVDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="BPTNUM_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DRN_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PRECOD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DLVFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PACFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="PACNBR_0" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="PRNNPR_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="TRSCOD_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="WEU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="GROWEI_0" Type="System.Decimal" DbType="decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="NETWEI_0" Type="System.Decimal" DbType="decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="PRPTEX1_0" Type="System.String" DbType="nvarchar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="PRPTEX2_0" Type="System.String" DbType="nvarchar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="PREUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EXPNUM_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="CREUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CREDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CREDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="AUUID_0" Type="System.Byte[]" DbType="binary(16) NOT NULL" CanBeNull="false" />
+      <Column Name="XXI0_0KPOBOL_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="XXI0_12CCAR_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="XXI0_12DPERC_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="XXI0_C1ODDIV_0" Type="System.String" DbType="nvarchar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="STOPREH_STOPRED" Member="STOPRED" ThisKey="PRHNUM_0" OtherKey="PRHNUM_0" Type="STOPRED" />
+    </Type>
+  </Table>
+  <Table Name="BPCUSTOMER">
+    <Type Name="BPCUSTOMER">
+      <Column Name="UPDTICK_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="BPCNUM_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCNAM_0" Type="System.String" DbType="nvarchar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCSHO_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="BCGCOD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="STOCK">
+    <Type Name="STOCK">
+      <Column Name="STOFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCOU_0" Type="System.Decimal" DbType="decimal(11,1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SLO_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="BPSLOT_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PALNUM_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CTRNUM_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="STA_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LOC_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCTYP_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCCAT_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="WRH_0" Type="System.String" DbType="nvarchar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SERNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="RCPDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="PCU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PCUSTUCOE_0" Type="System.Decimal" DbType="decimal(18,7) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYPCU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTUACT_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="PCUORI_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="STOCK_ITMMASTER" Member="ITMMASTER" ThisKey="ITMREF_0" OtherKey="ITMREF_0" Type="ITMMASTER" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="ITMMASTER">
+    <Type Name="ITMMASTER">
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CPY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TSICOD_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TSICOD_1" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TSICOD_2" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TSICOD_3" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TSICOD_4" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TCLCOD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SEAKEY_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ACCCOD_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES1_0" Type="System.String" DbType="nvarchar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES2_0" Type="System.String" DbType="nvarchar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES3_0" Type="System.String" DbType="nvarchar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="STDFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="ITMSTD_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EANCOD_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMSTA_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LOTMGTCOD_0" Type="System.Byte" CanBeNull="false" />
+      <Association Name="STOCK_ITMMASTER" Member="STOCK" ThisKey="ITMREF_0" OtherKey="ITMREF_0" Type="STOCK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BPADDRESS">
+    <Type Name="BPADDRESS">
+      <Column Name="BPATYP_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="BPANUM_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="BPADES_0" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="BPABID_0" Type="System.String" DbType="nvarchar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADDFLG_0" Type="System.Byte" DbType="tinyint NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADDLIG_0" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADDLIG_1" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADDLIG_2" Type="System.String" DbType="nvarchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSCOD_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CTY_0" Type="System.String" DbType="nvarchar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CODSEE_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SAT_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="CRY_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CRYNAM_0" Type="System.String" DbType="nvarchar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSORDINEAPE">
+    <Type Name="YTSORDINEAPE">
+      <Column Name="SOHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SALFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCORD_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCNAM_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIDAT_0" Storage="_MAXDLVDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="SOPLIN_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES_0" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="DLVQTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="SAU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="DLVQTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SLO_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PALNUM_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYPREP_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="SDHNUM_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="SOQSEQ_0" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSPREPORD">
+    <Type Name="YTSPREPORD">
+      <Column Name="UPDTICK_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="BPCORD_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="DT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="SOHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SOPLIN_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="PALNUM_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYPREP_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="CREDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDDATTIM_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="AUUID_0" Type="System.Byte[]" DbType="binary(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CREUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="UPDUSR_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ROWID" Type="System.Decimal" DbType="decimal(38,0) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SOQSEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" CanBeNull="false" />
+      <Column Name="YLETTO_0" Type="System.Byte" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSORDAPE">
+    <Type Name="YTSORDAPE">
+      <Column Name="SOHNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SALFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCORD_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCNAM_0" Type="System.String" DbType="nvarchar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIDAT_0" Storage="_MAXDLVDAT_0" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="SOPLIN_0" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ITMDES_0" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="DLVQTY_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="SAU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="DLVQTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SOQSEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="QTYPREP_0" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSALLORD" Member="STOALL">
+    <Type Name="STOALL">
+      <Column Name="STOFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCOU_0" Type="System.Decimal" DbType="decimal(11,1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SLO_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="STA_0" Type="System.String" DbType="nvarchar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LOC_0" Type="System.String" DbType="nvarchar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WRH_0" Type="System.String" DbType="nvarchar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SERNUM_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTUACT_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="ALLTYP_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="VCRTYP_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="VCRNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="VCRLIN_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="VCRSEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="SEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="BPRNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="YTSALLORD">
+    <Type Name="YTSALLORD">
+      <Column Name="SALFCY_0" Storage="_STOFCY_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="STOCOU_0" Type="System.Decimal" DbType="decimal(11,1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" DbType="nvarchar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SLO_0" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" DbType="decimal(28,13) NOT NULL" CanBeNull="false" />
+      <Column Name="BPCORD_0" Storage="_BPRNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="BPAADD_0" Type="System.String" CanBeNull="false" />
+      <Column Name="SHIDAT_0" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="SOPLIN_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="SOQSEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PALNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="VCRNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="SAU_0" Type="System.String" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="YTSRICAPE">
+    <Type Name="YTSRICAPE">
+      <Column Member="POHNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Member="POHFCY_0" Type="System.String" CanBeNull="false" />
+      <Column Member="BPSNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Member="BPRNAM_0" Type="System.String" CanBeNull="false" />
+      <Column Member="BPAADDLIG_0" Type="System.String" CanBeNull="false" />
+      <Column Member="EXTRCPDAT1_0" Type="System.DateTime" CanBeNull="false" />
+      <Column Member="POPLIN_0" Type="System.Int32" CanBeNull="false" />
+      <Column Member="POQSEQ_0" Type="System.Int32" CanBeNull="false" />
+      <Column Member="ITMREF_0" Type="System.String" CanBeNull="false" />
+      <Column Member="ITMDES_0" Type="System.String" CanBeNull="false" />
+      <Column Member="STU_0" Type="System.String" CanBeNull="false" />
+      <Column Member="QTYSTU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="RCPQTYSTU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="PUU_0" Type="System.String" CanBeNull="false" />
+      <Column Member="QTYPUU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="RCPQTYPUU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="QTYMANC_0" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

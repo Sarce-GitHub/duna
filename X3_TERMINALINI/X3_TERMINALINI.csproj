@@ -1,0 +1,486 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D812D93-AE4A-4319-BDA7-3841911E9F35}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>X3_TERMINALINI</RootNamespace>
+    <AssemblyName>X3_TERMINALINI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="X3_WS_TOOLS_V9">
+      <HintPath>..\..\..\sageX3Tools\sage-x3-tools\X3_WS_TOOLS_V9\bin\Debug\X3_WS_TOOLS_V9.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="default.aspx" />
+    <Content Include="Images\ico\android-chrome-192x192.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\android-chrome-512x512.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\apple-touch-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\browserconfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\favicon-16x16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\favicon-32x32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\mstile-150x150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ico\safari-pinned-tab.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="magazzino\CambioStock.aspx" />
+    <Content Include="magazzino\AssemblaPallet.aspx" />
+    <Content Include="magazzino\DisassemblaPallet.aspx" />
+    <Content Include="magazzino\CambioStockPallet.aspx" />
+    <Content Include="magazzino\EntrataDiversa.aspx" />
+    <Content Include="magazzino\GestioneNavetta.aspx" />
+    <Content Include="magazzino\Ricerca.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="ricevimento\Ricevimento.aspx" />
+    <Content Include="spedizione\BollePreparazione.aspx" />
+    <Content Include="spedizione\BollePreparazione_Righe.aspx" />
+    <Content Include="spedizione\GestionePresped.aspx" />
+    <Content Include="spedizione\Ordine_Ridistribuzione.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Disimpegno_Righe.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Disimpegno.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione.aspx" />
+    <Content Include="spedizione\Ordine.aspx" />
+    <Content Include="spedizione\Ordine_Righe.aspx" />
+    <Content Include="spedizione\Ordine_Righe_Dett.aspx" />
+    <Content Include="spedizione\Ordine_Righe_Disp.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Disimpegno_Pallet.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Pallet.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Righe_Rimuovi.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Righe_Conferma.aspx" />
+    <Content Include="spedizione\Ordine_Spedizione_Righe.aspx" />
+    <Content Include="spedizione\AutocompleteClienti-Data.aspx" />
+    <Content Include="spedizione\PreparaPallet.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="xTest.aspx" />
+    <Content Include="_include\css\bootstrap.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\css\carousel.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\css\custom.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\css\jquery-confirm.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\css\jquery-ui.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\css\modal.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\bootstrap-datepicker.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\bootstrap.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\color_picker.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\DataCheck.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\fontawesome.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\jquery-confirm.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\jquery-ui.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\jquery.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\AutoComplete.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\js\main.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBClasses.cs">
+      <DependentUpon>DBClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\AssemblaPallet.aspx.cs">
+      <DependentUpon>AssemblaPallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\AssemblaPallet.aspx.designer.cs">
+      <DependentUpon>AssemblaPallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\DisassemblaPallet.aspx.cs">
+      <DependentUpon>DisassemblaPallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\DisassemblaPallet.aspx.designer.cs">
+      <DependentUpon>DisassemblaPallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\CambioStockPallet.aspx.cs">
+      <DependentUpon>CambioStockPallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\CambioStockPallet.aspx.designer.cs">
+      <DependentUpon>CambioStockPallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\EntrataDiversa.aspx.cs">
+      <DependentUpon>EntrataDiversa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\EntrataDiversa.aspx.designer.cs">
+      <DependentUpon>EntrataDiversa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\GestioneNavetta.aspx.cs">
+      <DependentUpon>GestioneNavetta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\GestioneNavetta.aspx.designer.cs">
+      <DependentUpon>GestioneNavetta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\Ricerca.aspx.cs">
+      <DependentUpon>Ricerca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\Ricerca.aspx.designer.cs">
+      <DependentUpon>Ricerca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ricevimento\Ricevimento.aspx.cs">
+      <DependentUpon>Ricevimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ricevimento\Ricevimento.aspx.designer.cs">
+      <DependentUpon>Ricevimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\BollePreparazione.aspx.cs">
+      <DependentUpon>BollePreparazione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\BollePreparazione.aspx.designer.cs">
+      <DependentUpon>BollePreparazione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\BollePreparazione_Righe.aspx.cs">
+      <DependentUpon>BollePreparazione_Righe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\BollePreparazione_Righe.aspx.designer.cs">
+      <DependentUpon>BollePreparazione_Righe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\GestionePresped.aspx.cs">
+      <DependentUpon>GestionePresped.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\GestionePresped.aspx.designer.cs">
+      <DependentUpon>GestionePresped.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Ridistribuzione.aspx.cs">
+      <DependentUpon>Ordine_Ridistribuzione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Ridistribuzione.aspx.designer.cs">
+      <DependentUpon>Ordine_Ridistribuzione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno_Righe.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno_Righe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno_Righe.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno_Righe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione.aspx.cs">
+      <DependentUpon>Ordine_Spedizione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine.aspx.cs">
+      <DependentUpon>Ordine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine.aspx.designer.cs">
+      <DependentUpon>Ordine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe.aspx.cs">
+      <DependentUpon>Ordine_Righe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe.aspx.designer.cs">
+      <DependentUpon>Ordine_Righe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe_Dett.aspx.cs">
+      <DependentUpon>Ordine_Righe_Dett.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe_Dett.aspx.designer.cs">
+      <DependentUpon>Ordine_Righe_Dett.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe_Disp.aspx.cs">
+      <DependentUpon>Ordine_Righe_Disp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Righe_Disp.aspx.designer.cs">
+      <DependentUpon>Ordine_Righe_Disp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno_Pallet.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno_Pallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Disimpegno_Pallet.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Disimpegno_Pallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Pallet.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Pallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Pallet.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Pallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe_Rimuovi.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Righe_Rimuovi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe_Rimuovi.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Righe_Rimuovi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe_Conferma.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Righe_Conferma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe_Conferma.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Righe_Conferma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe.aspx.cs">
+      <DependentUpon>Ordine_Spedizione_Righe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\Ordine_Spedizione_Righe.aspx.designer.cs">
+      <DependentUpon>Ordine_Spedizione_Righe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\AutocompleteClienti-Data.aspx.cs">
+      <DependentUpon>AutocompleteClienti-Data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\AutocompleteClienti-Data.aspx.designer.cs">
+      <DependentUpon>AutocompleteClienti-Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="spedizione\PreparaPallet.aspx.cs">
+      <DependentUpon>PreparaPallet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spedizione\PreparaPallet.aspx.designer.cs">
+      <DependentUpon>PreparaPallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xTest.aspx.cs">
+      <DependentUpon>xTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xTest.aspx.designer.cs">
+      <DependentUpon>xTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_include\cls_Crypto.cs" />
+    <Compile Include="_include\cls_Object.cs" />
+    <Compile Include="DBClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="magazzino\CambioStock.aspx.cs">
+      <DependentUpon>CambioStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="magazzino\CambioStock.aspx.designer.cs">
+      <DependentUpon>CambioStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="_include\cls_SQL.cs" />
+    <Compile Include="_include\cls_Tools.cs" />
+    <Compile Include="_include\cls_WS.cs" />
+    <Compile Include="_include\Menu.Master.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_include\Menu.Master.designer.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\ico\site.webmanifest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DBClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="DBClasses.dbml.layout">
+      <DependentUpon>DBClasses.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="_include\css\bootstrap.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_include\Menu.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57644</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57644/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

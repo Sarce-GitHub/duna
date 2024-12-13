@@ -1,0 +1,9 @@
+﻿/.vs
+/X3_TERMINALINI/.vs
+*/bin/
+*/obj/
+*.csproj.user
+.fake
+.vscode/
+/X3_TERMINALINI/.vs/X3_TERMINALINI/FileContentIndex
+/X3_TERMINALINI/Properties/PublishProfiles/
