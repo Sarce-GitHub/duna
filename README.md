@@ -20,6 +20,7 @@
 ### Funzionalità e pulsanti
 
 - **Etic_Split:** carattere di split tra le varie componenti del barcode (articolo/lotto/sottolotto, *ITMREF_0/LOT_0/SLO_0*)
+- **BarCode_Only** il valore True nasconde i campi di "Ricerca generica" nelle pagine in cui sono presenti, lasciando disponibile solo la ricerca per barcode 
 - **RIC_TipoUbic:** ubicazione di default dell'area RICEVIMENTO
 - **PRESPED_Ubic:** ubicazione di default per il materiale in prespedizione (*LOCTYP_0=PRE*)
 - **SPED_Ubic:** ubicazione di default per il materiale in spedizione (*LOCTYP_0=SPE*)
