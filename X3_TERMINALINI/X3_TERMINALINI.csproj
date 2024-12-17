@@ -62,7 +62,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="X3_WS_TOOLS_V9">
-      <HintPath>..\..\..\sageX3Tools\sage-x3-tools\X3_WS_TOOLS_V9\bin\Debug\X3_WS_TOOLS_V9.dll</HintPath>
+      <HintPath>..\..\sage-x3-tools\X3_WS_TOOLS_V9\bin\Debug\X3_WS_TOOLS_V9.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
