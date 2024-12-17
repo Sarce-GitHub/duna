@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="X3_TERMINALINI._include.Menu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="it" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/ico/apple-touch-icon.png">
+    <link rel="icon" type="png" sizes="32x32" href="/Images/ico/favicon-32x32.png">
+    <link rel="icon" type="png" sizes="16x16" href="/Images/ico/favicon-16x16.png">
+    <link rel="manifest" href="/Images/ico/site.webmanifest">
+    <link rel="mask-icon" href="/Images/ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title><%=_Title%> - <%= _ver%></title>
+
+    <link href="/_include/css/jquery-ui.min.css?<%= _ver%>" rel="stylesheet" />
+    <link href="/_include/css/carousel.css?<%= _ver%>" type="text/css" rel="stylesheet" />
+    <link href="/_include/css/modal.css?<%= _ver%>" type="text/css" rel="stylesheet" />
+    <link href="/_include/css/jquery-confirm.css?<%= _ver%>" rel="stylesheet" />
+    <link href="/_include/css/bootstrap.css?<%= _ver%>" rel="stylesheet" />
+    <link href="/_include/css/Custom.css?<%= _ver%>" type="text/css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="CPH_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div class="container-fluid">
+            <div class="row frm-top">
+                <div class="col-6 font-small"><%=_Title%></div>
+                 <div class="col-6 text-end font-small"><i class="fa-regular fa-clock"></i> <asp:Label runat="server" ID="frm_top_ora"></asp:Label> </div>
+            </div>
+            <div style="padding-bottom:80px;">
+                <asp:ContentPlaceHolder ID="CPH_Main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="row frm-bottom">
+                <div class="col-12 text-center font-small">
+                <asp:ContentPlaceHolder ID="CPH_Bottom" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- MODAL WAIT BEGIN -->
+    <div id="modal">
+        <div class="wait_images"><i class="fa fa-spinner fa-spin fa-5x color_white"></i></div>
+    </div>
+    <!-- MODAL WAIT END -->
+
+    <script src="/_include/js/jquery.min.js?<%= _ver%>"></script>
+    <script src="/_include/js/jquery-ui.min.js?<%= _ver%>"></script>
+    <script src="/_include/js/bootstrap.min.js?<%= _ver%>"></script>
+    <script src="/_include/js/fontawesome.min.js?<%= _ver%>"></script>
+
+    <script src="/_include/js/main.js?<%= _ver%>"></script>
+    <script src="/_include/js/jquery-confirm.js?<%= _ver%>"></script>
+    <script src="/_include/js/DataCheck.js?<%= _ver%>"></script>
+    <script src="/_include/js/AutoComplete.js?<%= _ver%>"></script>
+     <asp:ContentPlaceHolder ID="CPH_JS" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

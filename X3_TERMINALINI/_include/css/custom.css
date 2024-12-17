@@ -1,0 +1,177 @@
+﻿/******************************/
+/* MODIFICHE BASE             */
+/******************************/
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: calc(16px + (8 * ((100vw - 300px)/ (1600 - 300))));
+}
+
+.font-small {
+    font-size: calc(12px + (6 * ((100vw - 300px)/ (1600 - 300))));
+}
+
+.margin-row {
+    margin-bottom: 10px;
+}
+
+.margin-row-top {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    div:has(#CPH_Bottom_btn_Indietro) {
+        text-align: left !important;
+    }
+}
+
+/******************************/
+/* LOGIN                      */
+/******************************/
+#div-login {
+    position: absolute;
+    top: 50%;
+    margin-top: -230px;
+    height: 480px;
+    width: 100%;
+}
+
+.div-login-main {
+    background-color: #FAFAFA;
+    border: 1px solid #CCCCCC;
+    margin: 10px;
+    padding: 30px 10px;
+}
+
+.div-login-tit {
+    font-size: calc(18px + (24 - 18) * ((100vw - 300px)/ (1600 - 300)));
+    font-weight: bold;
+}
+
+.div-login-foot {
+    font-size: calc(10px + (14 - 10) * ((100vw - 300px)/ (1600 - 300)));
+}
+
+
+.frm-top {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 5px 0px;
+    margin-bottom:10px;
+}
+
+.frm-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 5px 0px;
+}
+
+.base-label {
+    min-height: 39px;
+    background-color:#EEEEEE;
+}
+
+.base-label-small
+{
+    min-height: 39px;
+    background-color: #EEEEEE;
+}
+
+.bg-head {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.bg-alt {
+    background-color: #EEEEEE;
+}
+
+.bg-att {
+    background-color: #e5cf56 !important;
+}
+.bg-orange {
+    background-color: orange;
+}
+.bg-ok {
+    background-color: #37e515;
+}
+.bg-ko {
+    background-color: #760000;
+    color: #FFFFFF;
+}
+
+.btn-ok:hover {
+    background-color: #35d117 !important;
+}
+
+.bg-light-green {
+    background-color: rgba(126, 222, 178, 1) !important;
+}
+
+.bg-light-yellow {
+    background-color: rgba(240, 240, 134, 1) !important;
+}
+
+.bg-light-red {
+    background-color: rgba(249, 168, 168, 1) !important;
+}
+
+.bg-light-grey {
+    background-color: #e3e5e7 !important;
+}
+
+.btn-orange {
+    background-color: orange !important;
+    border-color: orange !important;
+}
+
+.btn-orange:hover {
+    background-color: #f9b231 !important;
+}
+
+.btn-ok {
+    background-color: #37e515 !important;
+    border-color: #37e515 !important;
+    color: unset;
+}
+
+.strike {
+    text-decoration: line-through;
+    background-color: #999999;
+}
+
+.check-ordine {
+    cursor: pointer;
+    font-size: calc(14px + (6 * ((100vw - 300px)/ (1600 - 300))));
+}
+
+.btn-white {
+    background-color: #FAFAFA;
+    border:1px solid #666666;
+}
+
+.input-hidden {
+    display: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tabella-dati b {
+    font-weight: 400;
+}
+
+.tabella-dati .qta-cell {
+    white-space: nowrap;
+}
+
+.line-margin-bottom {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
