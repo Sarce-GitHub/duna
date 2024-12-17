@@ -31,6 +31,7 @@
 - **Manage_NAV:** il valore True abilita i pulsanti CARICO NAVETTA e SCARICO NAVETTA nell'area MAGAZZINO (definiscesi navetta un ubicazione con *LOCTYP_0=NAV*)
 - **Manage_DISIMPEGNO:** il valore True abilita la funzionalità DISIMPEGNO PALLET nell'area SPEDIZIONI
 - **Manage_PRESPED:** il valore True abilita la gestione dell'area di PRESPEDIZIONE, coi relativi pulsanti CARICO PRESPEDIZIONE e PREPARA PALLET
+- **Manage_MAG_PALLET** il valore True abilita la gestione nell'area magazzino delle operazioni relative allo spostamento, alla creazione e al disassemblaggio dei pallet
 
 ### Invio mail 
 
