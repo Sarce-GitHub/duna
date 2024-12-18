@@ -43,15 +43,15 @@
                 <span class="font-small"><i>QTA</i></span><br />
                 <asp:TextBox runat="server" ID="txt_qta" CssClass="form-control"></asp:TextBox>
             </div>
-            <div class="col-2">
+            <div class="col-4">
                 <span class="font-small"><i>UM</i></span><br />
                 <asp:TextBox runat="server" ID="txt_UM" CssClass="form-control" Enabled="false"></asp:TextBox>
             </div>
-            <div class="col-3 col-md-2">
+            <div runat="server" class="col-3 col-md-2" visible="false">
                 <span class="font-small"><i>Linea</i></span><br />
                 <asp:TextBox runat="server" ID="txt_lin" CssClass="form-control" Enabled="false"></asp:TextBox>
             </div>
-            <div class="col-3 col-md-2" style="align-self:end">
+            <div class="col-4 col-md-2" style="align-self:end">
                 <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClick="btn_conferma_Click"/>
              </div>
         </div>
