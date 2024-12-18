@@ -24,7 +24,7 @@ namespace X3_TERMINALINI.produzione
             if (!cls_Tools.Check_User()) return;
             _USR = cls_Tools.Get_User();
             hf_FCY.Value = _USR.FCY_0;
-            if (_USR.ABIL4_0 != 2) Response.Redirect("/", true); 
+            if (_USR.ABIL5_0 != 2) Response.Redirect("/", true); 
 
             frm_OK.Text = "";
             frm_error.Text = "";
