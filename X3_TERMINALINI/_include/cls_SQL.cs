@@ -3173,7 +3173,10 @@ namespace X3_TERMINALINI
                                  RETQTY_0 = m.RETQTY_0,
                                  USEQTY_0 = m.USEQTY_0,
                                  BOMOPE_0 = m.BOMOPE_0,
-                                 BOMSEQ_0 = m.BOMSEQ_0
+                                 BOMSEQ_0 = m.BOMSEQ_0,
+                                 PCUSTUCOE_0 = i.PCUSTUCOE_0,
+                                 PCU_0 = i.PCU_0,
+                                 TSICOD_0 = i.TSICOD_0,
                              };
                     OUT_Obj = _i.FirstOrDefault();
 

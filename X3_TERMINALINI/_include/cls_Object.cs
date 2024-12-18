@@ -850,6 +850,11 @@ namespace X3_TERMINALINI
         //PROPRIETA' ITMMASTER
         public string ITMDES1_0 { get; set; }
 
+        public string TSICOD_0 { get; set; }
+
+        public string PCU_0 { get; set; }
+        public decimal PCUSTUCOE_0 { get; set; }
+
         public Obj_MFGMAT_ITMMASTER_PRODUZIONE()
         {
             //PROPRIETA' MFGMAT   
@@ -866,6 +871,9 @@ namespace X3_TERMINALINI
 
             //PROPRIETA' ITMMASTER
             ITMDES1_0 = "";
+            TSICOD_0 = "";
+            PCU_0 = "";
+            PCUSTUCOE_0 = 0;
         }
         public decimal RESTO
         {

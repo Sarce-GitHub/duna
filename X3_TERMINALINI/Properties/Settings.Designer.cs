@@ -323,6 +323,18 @@ namespace X3_TERMINALINI.Properties {
             }
         }
 
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("INTTA")]
+        public string CONS_MATERIALI_TSICOD_TO_CHECK
+        {
+            get
+            {
+                return ((string)(this["CONS_MATERIALI_TSICOD_TO_CHECK"]));
+            }
+        }
+
+
 
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
+using X3_TERMINALINI.Properties;
 
 namespace X3_TERMINALINI.produzione
 {
@@ -12,6 +14,7 @@ namespace X3_TERMINALINI.produzione
         cls_SQL _SQL = new cls_SQL();
         Obj_YTSUTX _USR = new Obj_YTSUTX();
         string error = "";
+        bool isFamigliaChemical;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -81,6 +84,8 @@ namespace X3_TERMINALINI.produzione
                 return;
             }
 
+            isFamigliaChemical = s.TSICOD_0 == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
+
             string[] Arr = txt_etichetta.Text.Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             string lot = !string.IsNullOrEmpty(s.LOT_0) ? " " + Properties.Settings.Default.Etic_Split +  " " + s.LOT_0 : "";
             pan_data.Visible = true;
@@ -88,8 +93,8 @@ namespace X3_TERMINALINI.produzione
             lbl_ordine.Text = "Ordine N°: " + s.MFGNUM_0;
             lbl_materiale.Text = s.ITMREF_0 + lot + " - " + s.ITMDES1_0;
             txt_lin.Text = s.MFGLIN_0.ToString("0.###");
-            txt_UM.Text =  s.STU_0;
-            txt_qta.Text = s.RESTO.ToString("0.###");
+            txt_UM.Text =  isFamigliaChemical ? s.PCU_0 : s.STU_0;
+            txt_qta.Text = isFamigliaChemical ? (s.RESTO / s.PCUSTUCOE_0).ToString("0.###") : s.RESTO.ToString("0.###");
             txt_qta.Focus();
 
             txt_ordine.Text = "";
@@ -103,7 +108,7 @@ namespace X3_TERMINALINI.produzione
             hf_ITMREF.Value = s.ITMREF_0;
             hf_STU.Value = s.STU_0;
             hf_CURRENTQTY.Value = txt_qta.Text;
-            hf_COEFF.Value = 0.ToString("0.###");
+            hf_COEFF.Value = isFamigliaChemical ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
 
         }
 
@@ -143,7 +148,7 @@ namespace X3_TERMINALINI.produzione
                 }
 
                 decimal QTY = decimal.Parse(txt_qta.Text);
-                decimal COEFF = 1;
+                decimal COEFF = isFamigliaChemical ? decimal.Parse(hf_COEFF.Value) : 1;
 
                 //if (QTY == decimal.Parse(hf_CURRENTQTY.Value))
                 //{

@@ -40,11 +40,11 @@
                 <span class="font-small"><i>QTA</i></span><br />
                 <asp:TextBox runat="server" ID="txt_qta" CssClass="form-control"></asp:TextBox>
             </div>
-            <div class="col-2 col-md-2">
+            <div class="col-3 col-md-2">
                 <span class="font-small"><i>UM</i></span><br />
                 <asp:TextBox runat="server" ID="txt_UM" CssClass="form-control" Enabled="false"></asp:TextBox>
             </div>
-            <div class="col-4 col-md-2">
+            <div class="col-3 col-md-2">
                 <span class="font-small"><i>PALNUM</i></span><br />
                 <asp:TextBox runat="server" ID="txt_PALNUM" CssClass="form-control" Enabled="false"></asp:TextBox>
             </div>
