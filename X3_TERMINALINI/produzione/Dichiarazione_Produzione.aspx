@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-12 col-md-10">
-            <span class="font-small"><i>Dichiarazione di Produzione</i></span><br/>
+            <span class="font-small"><i>Ordine di Produzione</i></span><br/>
             <asp:TextBox runat="server" ID="txt_Ricerca" CssClass="form-control chk-wait" AutoPostBack="true" OnTextChanged="txt_Ricerca_TextChanged"></asp:TextBox>
         </div>
 
