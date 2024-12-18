@@ -104,7 +104,7 @@ namespace X3_TERMINALINI.produzione
             hf_MFGLIN.Value = s.MFGLIN_0.ToString();
             hf_BOMSEQ .Value = s.BOMSEQ_0.ToString();
             hf_OPE.Value = s.BOMOPE_0.ToString();
-            hf_LOT.Value = Arr[1] ?? "";//s.LOT_0;
+            hf_LOT.Value = Arr.Length > 1 ? Arr[1] : "";//s.LOT_0;
             hf_ITMREF.Value = s.ITMREF_0;
             hf_STU.Value = s.STU_0;
             hf_CURRENTQTY.Value = txt_qta.Text;
