@@ -20,10 +20,10 @@ namespace X3_TERMINALINI.spedizione
             _USR = cls_Tools.Get_User();
             if (_USR.ABIL3_0 != 2) Response.Redirect("/Menu.aspx", true);
             string _ITM = "";
-            if (Request.QueryString["ITM"] == null) Response.Redirect("Ordine_Righe.aspx", true);
+            if (Request.QueryString["ITM"] == null) Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx", true);
             _ITM = Request.QueryString["ITM"].ToString();
             string _SAU = "";
-            if (Request.QueryString["SAU"] == null) Response.Redirect("Ordine_Righe.aspx", true);
+            if (Request.QueryString["SAU"] == null) Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx", true);
             _SAU = Request.QueryString["SAU"].ToString();
 
 
@@ -63,7 +63,7 @@ namespace X3_TERMINALINI.spedizione
 
         protected void btn_Indietro_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
+            Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
         }
     }
 }

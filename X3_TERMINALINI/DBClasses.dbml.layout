@@ -112,5 +112,11 @@
         <elementListCompartment Id="5bd28759-6731-4706-80a8-54dc55036632" absoluteBounds="4.015, 12.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="982ce410-8675-4d0e-8543-69a3a4a0c317" absoluteBounds="7.25, 13.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DBClassesDataContext/AVALNUM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3eee17aa-9eb3-450d-b67e-60ff3f6a2a0c" absoluteBounds="7.265, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -16,7 +16,9 @@ namespace X3_TERMINALINI.spedizione
         string _BPAADD = "";
         DateTime _DATE_DA = DateTime.MinValue;
         DateTime _DATE_A = DateTime.MinValue;
+        string  _PERIODE  = "";
         string _SOHNUM = "";
+        string _AUTOPALNUM = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!cls_Tools.Check_User()) return;
@@ -31,6 +33,7 @@ namespace X3_TERMINALINI.spedizione
                 Response.Redirect("Ordine.aspx", true);
                 return;
             }
+
 
 
             //
@@ -48,6 +51,9 @@ namespace X3_TERMINALINI.spedizione
             }
             if(Arr.Length > 4) _SOHNUM = Arr[4];
 
+            _PERIODE = _DATE_A.ToString("yy");
+            //_AUTOPALNUM = "PL" + _PERIODE + "-" + _SQL.GetFirstAvailablePalnum(short.Parse(_PERIODE));
+
             Ricerca();
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
 
@@ -57,6 +63,15 @@ namespace X3_TERMINALINI.spedizione
                 txt_Pallet.Text = Obj_Cookie.Get_String("prebolla-palnum");
                 txt_Pallet.Enabled = false;
                 txt_Etichetta.Focus();
+            }
+            else
+            {
+                var _num = "";
+                var wsRes = cls_TermWS.WS_YNUMPAL("YPLT", _PERIODE, out _num); //TODO: ADD CHECK
+
+                _AUTOPALNUM = "PL" + _PERIODE + "-" + wsRes;
+                txt_Pallet.Text = _AUTOPALNUM; //TODO: CONTROLLARE ERRORI
+                managePalletBehaviour();
             }
         }
 
@@ -141,7 +156,7 @@ namespace X3_TERMINALINI.spedizione
 
                 _h = "<div class=\"row " + _c + " \" data-itm=\"" + _i.ITMREF_0 + "\" data-sau=\"" + _i.SAU_0 + "\">";
                 _h += "<div class=\"col-12 col-md-2 check-pos\"><b>" + _i.ITMREF_0 + "</b></div>";
-                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " (" + _i.NrRighe.ToString("0") + ")</div>";
+                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " (" + _i.NrRighe.ToString("0") + ")" + " pal: " + _i.PALNUM_0 + "</div>";
                 _h += "<div class=\"col-4 col-md-2 text-end check-pos\">" + (_i.YQTYPCU_0).ToString("0.##") + " " + _i.YPCU_0 + "&nbsp;&nbsp;</div>";
                 //
                 if (Utl_QTY > 0 && !Check_QTY)
@@ -216,6 +231,11 @@ namespace X3_TERMINALINI.spedizione
 
         protected void txt_Pallet_TextChanged(object sender, EventArgs e)
         {
+            managePalletBehaviour();
+        }
+
+        private void managePalletBehaviour()
+        {
             frm_error.Text = "";
             // ESISTENZA PALLET
             if (_SQL.obj_PALNUM_Check(_USR.FCY_0, txt_Pallet.Text.Trim().ToUpper()))
@@ -237,6 +257,7 @@ namespace X3_TERMINALINI.spedizione
             Obj_Cookie.Set_String("prebolla-palnum", txt_Pallet.Text);
             txt_Pallet.Enabled = false;
             txt_Etichetta.Focus();
+
         }
 
         protected void btn_Pallet_Click(object sender, EventArgs e)

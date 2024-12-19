@@ -323,6 +323,35 @@ namespace X3_TERMINALINI
 
         }
 
+        public static string WS_YNUMPAL(string _TIP, string _ANN, out string _num) //TOFIX: _num is not used or misplaced
+        {
+            _num = "";
+            List<Xml_Data> src_Data = new List<Xml_Data>();
+            src_Data.Add(new Xml_Data("IN_TIP", _TIP, ""));
+            src_Data.Add(new Xml_Data("IN_ANNO", _ANN, "Integer"));
+
+            CAdxResultXml result = new CAdxResultXml();
+            try
+            {
+                bool ok = cls_WS.CallWS_GetResult(cls_Tools.Get_WS_Param(), "YNUM_PAL", "GRP1", src_Data, out _num, out result);
+                if (!ok)
+                {
+                    _num = _num + "<br/>Nessun risultato";
+                    if (result.messages.Length > 0) _num = _num + "<br/>" + result.messages[0].message;
+                    throw new Exception(_num);
+
+                }
+                return GetXmlFieldValue(result.resultXml, "OUT_NUM");
+            }
+            catch (Exception ex)
+            {
+                _num = ex.Message;
+                return _num;
+            }
+
+        }
+
+
         public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, out string _err, out string _res)
         {
             _err = "";

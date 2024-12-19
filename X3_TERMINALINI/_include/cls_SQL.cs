@@ -2682,7 +2682,26 @@ namespace X3_TERMINALINI
 
         #region SPEDIZIONI ORDINI - ORDINI PREPARATI
 
+        public string GetFirstAvailablePalnum(short periode)
+        {
+            using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+            {
+                var pal = db.AVALNUM
+                    .Where(a => a.CODNUM_0 == "YPLT" && a.PERIODE_0 == periode).FirstOrDefault();
 
+                string toReturn = pal != null ? pal.VALEUR_0.ToString("#") : "No record found";
+                //string toReturn = pal.FirstOrDefault().VALEUR_0.ToString("#");
+
+                if (pal != null)
+                {
+                    pal.VALEUR_0 += 1; // Increment the value by 1
+                    db.SubmitChanges();  // Save the changes to the database
+                }
+
+                return toReturn;
+               
+            }
+        }
         //// LOAD Obj_Ytsprepord
         //public List<Obj_YTSPREPORD> Obj_YTSPREPORD_List(string IN_BPCORD, string IN_BPAADD, DateTime IN_DT)
         //{

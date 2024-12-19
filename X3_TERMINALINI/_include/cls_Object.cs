@@ -767,6 +767,20 @@ namespace X3_TERMINALINI
         }
     }
 
+    public class Obj_AVALNUM
+    {
+        public string CODNUM_0 { get; set; }
+        public int PERIODE_0 { get; set; }
+        public decimal VALEUR_0 { get; set; }
+
+        public Obj_AVALNUM()
+        {
+            CODNUM_0 = "";
+            PERIODE_0 = 0;
+            VALEUR_0 = 0;
+        }
+    }
+
     #endregion
 
     #region PRODUZIONE
