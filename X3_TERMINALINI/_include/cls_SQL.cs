@@ -2351,6 +2351,7 @@ namespace X3_TERMINALINI
                                     YQTYPCU_0 = item.YQTYPCU_0,
                                     YPCUSTUCOE_0 = item.YPCUSTUCOE_0,
                                     SOHNUM_0 = item.SOHNUM_0,
+                                    LOC_0 = item.LOC_0,
                                     NrRighe = 1
                                 };
                                 _OLD_SOH = item.SOHNUM_0 + "_" + item.SOPLIN_0 + "_" + item.SOQSEQ_0;
@@ -2419,6 +2420,7 @@ namespace X3_TERMINALINI
                             QTYPREP_0 = item.QTYPREP_0,
                             YPCU_0 = item.YPCU_0,
                             YPCUSTUCOE_0 = item.YPCUSTUCOE_0,
+                            LOC_0 = item.LOC_0
                         };
                         Lista.Add(_YTSORDAPE);
                     }
@@ -2548,6 +2550,7 @@ namespace X3_TERMINALINI
                                 YPCU_0 = item.YPCU_0,
                                 YQTYPCU_0 = item.YQTYPCU_0,
                                 YPCUSTUCOE_0 = item.YPCUSTUCOE_0,
+                                LOC_0 = item.LOC_0,
                                 NrRighe = 1
                             };
 
@@ -2679,7 +2682,26 @@ namespace X3_TERMINALINI
 
         #region SPEDIZIONI ORDINI - ORDINI PREPARATI
 
+        public string GetFirstAvailablePalnum(short periode)
+        {
+            using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+            {
+                var pal = db.AVALNUM
+                    .Where(a => a.CODNUM_0 == "YPLT" && a.PERIODE_0 == periode).FirstOrDefault();
 
+                string toReturn = pal != null ? pal.VALEUR_0.ToString("#") : "No record found";
+                //string toReturn = pal.FirstOrDefault().VALEUR_0.ToString("#");
+
+                if (pal != null)
+                {
+                    pal.VALEUR_0 += 1; // Increment the value by 1
+                    db.SubmitChanges();  // Save the changes to the database
+                }
+
+                return toReturn;
+               
+            }
+        }
         //// LOAD Obj_Ytsprepord
         //public List<Obj_YTSPREPORD> Obj_YTSPREPORD_List(string IN_BPCORD, string IN_BPAADD, DateTime IN_DT)
         //{

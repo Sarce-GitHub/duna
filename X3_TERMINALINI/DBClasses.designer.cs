@@ -216,6 +216,14 @@ namespace X3_TERMINALINI
 				return this.GetTable<MFGMAT>();
 			}
 		}
+		
+		public System.Data.Linq.Table<AVALNUM> AVALNUM
+		{
+			get
+			{
+				return this.GetTable<AVALNUM>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute()]
@@ -6604,6 +6612,8 @@ namespace X3_TERMINALINI
 		
 		private decimal _YPCUSTUCOE_0;
 		
+		private string _LOC_0;
+		
 		public YTSORDAPE()
 		{
 		}
@@ -6940,6 +6950,22 @@ namespace X3_TERMINALINI
 				if ((this._YPCUSTUCOE_0 != value))
 				{
 					this._YPCUSTUCOE_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOC_0", CanBeNull=false)]
+		public string LOC_0
+		{
+			get
+			{
+				return this._LOC_0;
+			}
+			set
+			{
+				if ((this._LOC_0 != value))
+				{
+					this._LOC_0 = value;
 				}
 			}
 		}
@@ -8246,6 +8272,69 @@ namespace X3_TERMINALINI
 				if ((this._BOMOPE_0 != value))
 				{
 					this._BOMOPE_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class AVALNUM
+	{
+		
+		private string _CODNUM_0;
+		
+		private short _PERIODE_0;
+		
+		private decimal _VALEUR_0;
+		
+		public AVALNUM()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODNUM_0", CanBeNull=false)]
+		public string CODNUM_0
+		{
+			get
+			{
+				return this._CODNUM_0;
+			}
+			set
+			{
+				if ((this._CODNUM_0 != value))
+				{
+					this._CODNUM_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PERIODE_0")]
+		public short PERIODE_0
+		{
+			get
+			{
+				return this._PERIODE_0;
+			}
+			set
+			{
+				if ((this._PERIODE_0 != value))
+				{
+					this._PERIODE_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALEUR_0")]
+		public decimal VALEUR_0
+		{
+			get
+			{
+				return this._VALEUR_0;
+			}
+			set
+			{
+				if ((this._VALEUR_0 != value))
+				{
+					this._VALEUR_0 = value;
 				}
 			}
 		}

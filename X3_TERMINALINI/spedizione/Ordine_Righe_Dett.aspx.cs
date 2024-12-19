@@ -33,13 +33,13 @@ namespace X3_TERMINALINI.spedizione
             if (!cls_Tools.Check_User()) return;
             _USR = cls_Tools.Get_User();
             if (_USR.ABIL3_0 != 2) Response.Redirect("/Menu.aspx", true);
-            if (Request.QueryString["LOT"] == null) Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
+            if (Request.QueryString["LOT"] == null) Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
             //LOT=CFB08671AAA-L2430005566
             
             string[] Arr = Obj_Cookie.Get_String("prebolla-bc").ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             if (Arr.Length != 4 && Arr.Length != 5)
             {
-                Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
+                Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
                 return;
             }
             //
@@ -53,7 +53,7 @@ namespace X3_TERMINALINI.spedizione
 
             if (_Art_Ordine.ITMREF_0=="")
             {
-                Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
+                Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
                 return;
             }
             //
@@ -65,7 +65,7 @@ namespace X3_TERMINALINI.spedizione
 
         protected void btn_Indietro_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
+            Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
         }
 
         protected void txt_Partenza_TextChanged(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace X3_TERMINALINI.spedizione
                     frm_error.Text = "";
                     lbl_Stato.Text = _Stock.STA_0;
                     lbl_UM.Text = _Stock.PCU_0;
-                    lbl_richiesto.Text = (_Art_Ordine.YQTYPCU_0 - _Art_Ordine.DLVQTY_0 - _Art_Ordine.QTYPREP_0).ToString("0.###");
+                    lbl_richiesto.Text = (_Art_Ordine.YQTYPCU_0 - _Art_Ordine.DLVQTY_0 - (_Art_Ordine.QTYPREP_0) / _Art_Ordine.YPCUSTUCOE_0).ToString("0.###");
                     lbl_disp.Text = _Stock.QTYPCU_0.ToString("0.###");
                     txt_Quantita.Text = "";
                     txt_Quantita.Focus();
