@@ -591,6 +591,7 @@ namespace X3_TERMINALINI
         public string YPCU_0 { get; set; }
         public decimal YQTYPCU_0 { get; set; }
         public decimal YPCUSTUCOE_0 { get; set; }
+        public string LOC_0 { get; set; }
 
         public Obj_YTSORDAPE()
         {
@@ -617,6 +618,7 @@ namespace X3_TERMINALINI
             YPCU_0 = "";
             YQTYPCU_0 = 0;
             YPCUSTUCOE_0 = 0;
+            LOC_0 = "";
         }
 
         public decimal QTY_MANC

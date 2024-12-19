@@ -326,6 +326,7 @@
       <Column Name="YPCU_0" Type="System.String" CanBeNull="false" />
       <Column Name="YQTYPCU_0" Type="System.Decimal" CanBeNull="false" />
       <Column Name="YPCUSTUCOE_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="LOC_0" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="YTSALLORD" Member="STOALL">
@@ -395,8 +396,8 @@
       <Column Name="RETQTY_0" Type="System.Decimal" CanBeNull="false" />
       <Column Name="USEQTY_0" Type="System.Decimal" CanBeNull="false" />
       <Column Name="ITMREF_0" Type="System.String" CanBeNull="false" />
-      <Column Member="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
-      <Column Member="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
+      <Column Name="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
+      <Column Name="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

@@ -134,7 +134,9 @@ namespace X3_TERMINALINI.spedizione
                 _c = ((idx % 2) == 1 ? "bg-alt" : "");
 
                 if (_i.QTYPREP_0 > 0 && _i.QTYPREP_0 < (_i.QTY_0 - _i.DLVQTY_0)) _c = "bg-att";
-                if (_i.QTYPREP_0 > 0 && _i.QTYPREP_0 == (_i.QTY_0 - _i.DLVQTY_0)) _c = "bg-ok";
+                if (_i.QTYPREP_0 > 0 && _i.QTYPREP_0 == (_i.QTY_0 - _i.DLVQTY_0)) _c = "bg-light-blue";
+                if(_i.LOC_0 == Properties.Settings.Default.SPED_Ubic && _i.QTYPREP_0 > 0 && _i.QTYPREP_0 == (_i.QTY_0 - _i.DLVQTY_0)) _c = "bg-ok";
+
 
 
                 _h = "<div class=\"row " + _c + " \" data-itm=\"" + _i.ITMREF_0 + "\" data-sau=\"" + _i.SAU_0 + "\">";

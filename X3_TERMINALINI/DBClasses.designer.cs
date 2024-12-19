@@ -6604,6 +6604,8 @@ namespace X3_TERMINALINI
 		
 		private decimal _YPCUSTUCOE_0;
 		
+		private string _LOC_0;
+		
 		public YTSORDAPE()
 		{
 		}
@@ -6940,6 +6942,22 @@ namespace X3_TERMINALINI
 				if ((this._YPCUSTUCOE_0 != value))
 				{
 					this._YPCUSTUCOE_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOC_0", CanBeNull=false)]
+		public string LOC_0
+		{
+			get
+			{
+				return this._LOC_0;
+			}
+			set
+			{
+				if ((this._LOC_0 != value))
+				{
+					this._LOC_0 = value;
 				}
 			}
 		}

@@ -105,6 +105,10 @@ html, body {
     color: #FFFFFF;
 }
 
+.bg-light-blue {
+    background-color: lightblue !important;
+}
+
 .btn-ok:hover {
     background-color: #35d117 !important;
 }
