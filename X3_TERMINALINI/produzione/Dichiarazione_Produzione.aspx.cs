@@ -54,7 +54,7 @@ namespace X3_TERMINALINI.produzione
                 lbl_magazzino.Text = "MAGAZZINO " + _USR.FCY_0;
                 lbl_ordine.Text = "Ordine N°: " + s.MFGNUM_0 + "; COEFF: " + s.PCUSTUCOE_0.ToString("0.###");
                 lbl_materiale.Text = s.ITMREF_0 + " - " + s.ITMDES1_0;
-                txt_UM.Text = s.UOM_0;//showLastre ? s.PCU_0 : s.STU_0;
+                txt_UM.Text = showLastre ? s.PCU_0 : s.STU_0;//s.UOM_0;
                 txt_qta.Text = showLastre ? Math.Ceiling(s.LASTRE).ToString("0.###") : Math.Ceiling(s.RMNEXTQTY_0).ToString("0.###");
                 txt_qta.Text = hf_QTY.Value;
                 txt_qta.Focus();
