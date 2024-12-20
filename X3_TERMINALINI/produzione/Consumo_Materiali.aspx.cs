@@ -109,11 +109,14 @@ namespace X3_TERMINALINI.produzione
             hf_STU.Value = s.STU_0;
             hf_CURRENTQTY.Value = txt_qta.Text;
             hf_COEFF.Value = isFamigliaChemical ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
+            hf_TSICOD.Value = s.TSICOD_0;
 
         }
 
         protected void btn_conferma_Click(object sender, EventArgs e)
         {
+            isFamigliaChemical = hf_TSICOD.Value == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
+
             if (txt_qta.Text.Trim() == "")
             {
                 frm_error.Text = "Inserire una quantità";
@@ -192,6 +195,7 @@ namespace X3_TERMINALINI.produzione
             hf_STU.Value = "";
             hf_CURRENTQTY.Value = 0.ToString("0.###");
             hf_COEFF.Value = 0.ToString("0.###");
+            hf_TSICOD.Value = "";
         }
     }
 }

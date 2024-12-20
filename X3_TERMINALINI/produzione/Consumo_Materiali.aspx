@@ -17,6 +17,8 @@
     <asp:HiddenField ID="hf_CURRENTQTY" runat="server" />
     <asp:HiddenField ID="hf_BOMSEQ" runat="server" />
     <asp:HiddenField ID="hf_OPE" runat="server" />
+    <asp:HiddenField ID="hf_TSICOD" runat="server" />
+
 
     <div class="row">
         <div class="col-12 col-md-6">
