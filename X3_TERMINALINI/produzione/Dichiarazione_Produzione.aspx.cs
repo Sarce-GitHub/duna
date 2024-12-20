@@ -49,7 +49,7 @@ namespace X3_TERMINALINI.produzione
                     return;
                 }
 
-                bool showLastre = !string.IsNullOrEmpty(s.PCU_0) && s.PCU_0 != s.STU_0;
+                bool showLastre = !string.IsNullOrEmpty(s.PCU_0) && s.PCU_0 != " " && s.PCU_0 != s.STU_0;
                 pan_data.Visible = true;
                 lbl_magazzino.Text = "MAGAZZINO " + _USR.FCY_0;
                 lbl_ordine.Text = "Ordine N°: " + s.MFGNUM_0 + "; COEFF: " + s.PCUSTUCOE_0.ToString("0.###");

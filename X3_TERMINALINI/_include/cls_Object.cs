@@ -867,6 +867,8 @@ namespace X3_TERMINALINI
         public string ITMDES1_0 { get; set; }
 
         public string TSICOD_0 { get; set; }
+        public string TSICOD_3 { get; set; }
+
 
         public string PCU_0 { get; set; }
         public decimal PCUSTUCOE_0 { get; set; }
@@ -888,6 +890,7 @@ namespace X3_TERMINALINI
             //PROPRIETA' ITMMASTER
             ITMDES1_0 = "";
             TSICOD_0 = "";
+            TSICOD_3 = "";
             PCU_0 = "";
             PCUSTUCOE_0 = 0;
         }

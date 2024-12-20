@@ -14,7 +14,7 @@ namespace X3_TERMINALINI.produzione
         cls_SQL _SQL = new cls_SQL();
         Obj_YTSUTX _USR = new Obj_YTSUTX();
         string error = "";
-        bool isFamigliaChemical;
+        bool isFamigliaStatistica;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace X3_TERMINALINI.produzione
                 return;
             }
 
-            isFamigliaChemical = s.TSICOD_0 == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
+            isFamigliaStatistica = s.TSICOD_3 == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
 
             string[] Arr = txt_etichetta.Text.Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             string lot = !string.IsNullOrEmpty(s.LOT_0) ? " " + Properties.Settings.Default.Etic_Split +  " " + s.LOT_0 : "";
@@ -93,8 +93,8 @@ namespace X3_TERMINALINI.produzione
             lbl_ordine.Text = "Ordine N°: " + s.MFGNUM_0;
             lbl_materiale.Text = s.ITMREF_0 + lot + " - " + s.ITMDES1_0;
             txt_lin.Text = s.MFGLIN_0.ToString("0.###");
-            txt_UM.Text =  isFamigliaChemical ? s.PCU_0 : s.STU_0;
-            txt_qta.Text = isFamigliaChemical ? (s.RESTO / s.PCUSTUCOE_0).ToString("0.###") : s.RESTO.ToString("0.###");
+            txt_UM.Text =  isFamigliaStatistica ? s.PCU_0 : s.STU_0;
+            txt_qta.Text = isFamigliaStatistica ? (s.RESTO / s.PCUSTUCOE_0).ToString("0.###") : s.RESTO.ToString("0.###");
             txt_qta.Focus();
 
             txt_ordine.Text = "";
@@ -108,14 +108,14 @@ namespace X3_TERMINALINI.produzione
             hf_ITMREF.Value = s.ITMREF_0;
             hf_STU.Value = s.STU_0;
             hf_CURRENTQTY.Value = txt_qta.Text;
-            hf_COEFF.Value = isFamigliaChemical ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
-            hf_TSICOD.Value = s.TSICOD_0;
+            hf_COEFF.Value = isFamigliaStatistica ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
+            hf_TSICOD.Value = s.TSICOD_3;
 
         }
 
         protected void btn_conferma_Click(object sender, EventArgs e)
         {
-            isFamigliaChemical = hf_TSICOD.Value == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
+            isFamigliaStatistica = hf_TSICOD.Value == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
 
             if (txt_qta.Text.Trim() == "")
             {
@@ -151,7 +151,7 @@ namespace X3_TERMINALINI.produzione
                 }
 
                 decimal QTY = decimal.Parse(txt_qta.Text);
-                decimal COEFF = isFamigliaChemical ? decimal.Parse(hf_COEFF.Value) : 1;
+                decimal COEFF = isFamigliaStatistica ? decimal.Parse(hf_COEFF.Value) : 1;
 
                 //if (QTY == decimal.Parse(hf_CURRENTQTY.Value))
                 //{

@@ -3199,6 +3199,7 @@ namespace X3_TERMINALINI
                                  PCUSTUCOE_0 = i.PCUSTUCOE_0,
                                  PCU_0 = i.PCU_0,
                                  TSICOD_0 = i.TSICOD_0,
+                                 TSICOD_3 = i.TSICOD_3,
                              };
                     OUT_Obj = _i.FirstOrDefault();
 
