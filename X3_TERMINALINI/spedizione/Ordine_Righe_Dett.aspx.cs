@@ -116,7 +116,8 @@ namespace X3_TERMINALINI.spedizione
                     frm_error.Text = "";
                     lbl_Stato.Text = _Stock.STA_0;
                     lbl_UM.Text = _Stock.PCU_0;
-                    lbl_richiesto.Text = (_Art_Ordine.YQTYPCU_0 - _Art_Ordine.DLVQTY_0 - (_Art_Ordine.QTYPREP_0) / _Art_Ordine.YPCUSTUCOE_0).ToString("0.###");
+                    //lbl_richiesto.Text = (_Art_Ordine.YQTYPCU_0 - _Art_Ordine.DLVQTY_0 - (_Art_Ordine.QTYPREP_0 / _Art_Ordine.YPCUSTUCOE_0)).ToString("0.###"); //PER ALE SE SERVE
+                    lbl_richiesto.Text = (_Art_Ordine.QTYPREP_0 / _Art_Ordine.YPCUSTUCOE_0).ToString("0.###");
                     lbl_disp.Text = _Stock.QTYPCU_0.ToString("0.###");
                     txt_Quantita.Text = "";
                     txt_Quantita.Focus();
@@ -246,7 +247,7 @@ namespace X3_TERMINALINI.spedizione
 
                     //
                     transaction.Commit();
-                    Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
+                    Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
 
                     return;
