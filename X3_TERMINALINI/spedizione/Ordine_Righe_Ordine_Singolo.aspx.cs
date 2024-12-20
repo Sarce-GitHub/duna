@@ -64,15 +64,6 @@ namespace X3_TERMINALINI.spedizione
                 txt_Pallet.Enabled = false;
                 txt_Etichetta.Focus();
             }
-            else
-            {
-                var _num = "";
-                var wsRes = cls_TermWS.WS_YNUMPAL("YPLT", _PERIODE, out _num); //TODO: ADD CHECK
-
-                _AUTOPALNUM = "PL" + _PERIODE + "-" + wsRes;
-                txt_Pallet.Text = _AUTOPALNUM; //TODO: CONTROLLARE ERRORI
-                managePalletBehaviour();
-            }
         }
 
         private void Ricerca()
@@ -99,6 +90,25 @@ namespace X3_TERMINALINI.spedizione
             var listOrdine = _SQL.Obj_YTSORDAPE_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A)
                             .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM)
                             .OrderBy(x => x.ITMREF_0).ThenBy(x => x.ITMREF_0).ToList();
+
+
+            if(string.IsNullOrEmpty(Obj_Cookie.Get_String("prebolla-palnum")))
+            {
+                var suggestedPalnum = listOrdine.OrderByDescending(w => w.PALNUM_0).Select(w => w.PALNUM_0).FirstOrDefault();
+                if(string.IsNullOrEmpty(suggestedPalnum) || suggestedPalnum == " ")
+                {
+                    var _num = "";
+                    var wsRes = cls_TermWS.WS_YNUMPAL("YPLT", _PERIODE, out _num); //TODO: ADD CHECK
+
+                    _AUTOPALNUM = "PL" + _PERIODE + "-" + wsRes;
+                    txt_Pallet.Text = _AUTOPALNUM; //TODO: CONTROLLARE ERRORI
+                }
+                else
+                {
+                    txt_Pallet.Text = suggestedPalnum;
+                }
+                managePalletBehaviour();
+            }
 
             foreach (Obj_YTSORDAPE _i in listOrdine)
             {
@@ -262,8 +272,17 @@ namespace X3_TERMINALINI.spedizione
 
         protected void btn_Pallet_Click(object sender, EventArgs e)
         {
-            Obj_Cookie.Set_String("prebolla-palnum", "");
-            Response.Redirect(Request.RawUrl);
+            var _num = "";
+            var wsRes = cls_TermWS.WS_YNUMPAL("YPLT", _PERIODE, out _num); //TODO: ADD CHECK
+
+            _AUTOPALNUM = "PL" + _PERIODE + "-" + wsRes;
+            txt_Pallet.Text = _AUTOPALNUM; //TODO: CONTROLLARE ERRORI
+            managePalletBehaviour();
+
+            txt_Pallet.Enabled = true;
+
+            //Obj_Cookie.Set_String("prebolla-palnum", "");
+            //Response.Redirect(Request.RawUrl);
         }
     }
 }
