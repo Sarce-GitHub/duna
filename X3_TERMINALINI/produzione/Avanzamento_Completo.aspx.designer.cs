@@ -132,6 +132,15 @@ namespace X3_TERMINALINI.produzione
         protected global::System.Web.UI.WebControls.HiddenField hf_PALNUM;
 
         /// <summary>
+        /// Controllo hf_NPACCHI.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hf_NPACCHI;
+
+        /// <summary>
         /// Controllo txt_Ricerca.
         /// </summary>
         /// <remarks>

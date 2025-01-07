@@ -18,6 +18,8 @@
     <asp:HiddenField ID="hf_ODP" runat="server" />
     <asp:HiddenField ID="hf_QTY" runat="server" />
     <asp:HiddenField ID="hf_PALNUM" runat="server" />
+    <asp:HiddenField ID="hf_NPACCHI" runat="server" />
+
 
 
     <div class="row">
@@ -69,4 +71,9 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="CPH_JS" runat="server">
+    <script type="text/javascript">
+        function disableButton(button) {
+            button.disabled = true;
+        }
+    </script>
 </asp:Content>

@@ -402,9 +402,29 @@
   </Table>
   <Table Name="" Member="AVALNUM">
     <Type Name="AVALNUM">
-      <Column Member="CODNUM_0" Type="System.String" CanBeNull="false" />
-      <Column Member="PERIODE_0" Type="System.Int16" CanBeNull="false" />
-      <Column Member="VALEUR_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="CODNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="PERIODE_0" Type="System.Int16" CanBeNull="false" />
+      <Column Name="VALEUR_0" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="YSCARMAT">
+    <Type Name="YSCARMAT">
+      <Column Name="MFGFCY_0" Type="System.String" CanBeNull="false" />
+      <Column Name="MFGNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="MFGLIN_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="LOT_0" Type="System.String" CanBeNull="false" />
+      <Column Name="STU_0" Type="System.String" CanBeNull="false" />
+      <Column Name="RETQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="USEQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="ITMREF_0" Type="System.String" CanBeNull="false" />
+      <Column Name="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
+      <Column Name="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
+      <Column Name="LOC_0" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="YTSBARCODE">
+    <Type Name="YTSBARCODE">
+      <Column Member="BARCODE_0" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

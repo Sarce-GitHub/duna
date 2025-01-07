@@ -224,6 +224,22 @@ namespace X3_TERMINALINI
 				return this.GetTable<AVALNUM>();
 			}
 		}
+		
+		public System.Data.Linq.Table<YSCARMAT> YSCARMAT
+		{
+			get
+			{
+				return this.GetTable<YSCARMAT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<YTSBARCODE> YTSBARCODE
+		{
+			get
+			{
+				return this.GetTable<YTSBARCODE>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute()]
@@ -8335,6 +8351,240 @@ namespace X3_TERMINALINI
 				if ((this._VALEUR_0 != value))
 				{
 					this._VALEUR_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class YSCARMAT
+	{
+		
+		private string _MFGFCY_0;
+		
+		private string _MFGNUM_0;
+		
+		private int _MFGLIN_0;
+		
+		private string _LOT_0;
+		
+		private string _STU_0;
+		
+		private decimal _RETQTY_0;
+		
+		private decimal _USEQTY_0;
+		
+		private string _ITMREF_0;
+		
+		private short _BOMSEQ_0;
+		
+		private short _BOMOPE_0;
+		
+		private string _LOC_0;
+		
+		public YSCARMAT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFGFCY_0", CanBeNull=false)]
+		public string MFGFCY_0
+		{
+			get
+			{
+				return this._MFGFCY_0;
+			}
+			set
+			{
+				if ((this._MFGFCY_0 != value))
+				{
+					this._MFGFCY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFGNUM_0", CanBeNull=false)]
+		public string MFGNUM_0
+		{
+			get
+			{
+				return this._MFGNUM_0;
+			}
+			set
+			{
+				if ((this._MFGNUM_0 != value))
+				{
+					this._MFGNUM_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFGLIN_0")]
+		public int MFGLIN_0
+		{
+			get
+			{
+				return this._MFGLIN_0;
+			}
+			set
+			{
+				if ((this._MFGLIN_0 != value))
+				{
+					this._MFGLIN_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOT_0", CanBeNull=false)]
+		public string LOT_0
+		{
+			get
+			{
+				return this._LOT_0;
+			}
+			set
+			{
+				if ((this._LOT_0 != value))
+				{
+					this._LOT_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STU_0", CanBeNull=false)]
+		public string STU_0
+		{
+			get
+			{
+				return this._STU_0;
+			}
+			set
+			{
+				if ((this._STU_0 != value))
+				{
+					this._STU_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RETQTY_0")]
+		public decimal RETQTY_0
+		{
+			get
+			{
+				return this._RETQTY_0;
+			}
+			set
+			{
+				if ((this._RETQTY_0 != value))
+				{
+					this._RETQTY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USEQTY_0")]
+		public decimal USEQTY_0
+		{
+			get
+			{
+				return this._USEQTY_0;
+			}
+			set
+			{
+				if ((this._USEQTY_0 != value))
+				{
+					this._USEQTY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ITMREF_0", CanBeNull=false)]
+		public string ITMREF_0
+		{
+			get
+			{
+				return this._ITMREF_0;
+			}
+			set
+			{
+				if ((this._ITMREF_0 != value))
+				{
+					this._ITMREF_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOMSEQ_0")]
+		public short BOMSEQ_0
+		{
+			get
+			{
+				return this._BOMSEQ_0;
+			}
+			set
+			{
+				if ((this._BOMSEQ_0 != value))
+				{
+					this._BOMSEQ_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOMOPE_0")]
+		public short BOMOPE_0
+		{
+			get
+			{
+				return this._BOMOPE_0;
+			}
+			set
+			{
+				if ((this._BOMOPE_0 != value))
+				{
+					this._BOMOPE_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOC_0", CanBeNull=false)]
+		public string LOC_0
+		{
+			get
+			{
+				return this._LOC_0;
+			}
+			set
+			{
+				if ((this._LOC_0 != value))
+				{
+					this._LOC_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class YTSBARCODE
+	{
+		
+		private string _BARCODE_0;
+		
+		public YTSBARCODE()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE_0", CanBeNull=false)]
+		public string BARCODE_0
+		{
+			get
+			{
+				return this._BARCODE_0;
+			}
+			set
+			{
+				if ((this._BARCODE_0 != value))
+				{
+					this._BARCODE_0 = value;
 				}
 			}
 		}

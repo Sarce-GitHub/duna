@@ -11,13 +11,14 @@
     <asp:HiddenField ID="hf_MFGNUM" runat="server" />
     <asp:HiddenField ID="hf_MFGLIN" runat="server" />
     <asp:HiddenField ID="hf_LOT" runat="server" />
-    <asp:HiddenField ID="hf_ITMREF" runat="server" />   
+    <asp:HiddenField ID="hf_ITMREF" runat="server" />
     <asp:HiddenField ID="hf_STU" runat="server" />
     <asp:HiddenField ID="hf_COEFF" runat="server" />
     <asp:HiddenField ID="hf_CURRENTQTY" runat="server" />
     <asp:HiddenField ID="hf_BOMSEQ" runat="server" />
     <asp:HiddenField ID="hf_OPE" runat="server" />
     <asp:HiddenField ID="hf_TSICOD" runat="server" />
+    <asp:HiddenField ID="hf_LOC" runat="server"/>
 
 
     <div class="row">
@@ -33,7 +34,7 @@
 
     </div>
 
-    <asp:Panel runat="server" ID="pan_data" visible="false" class="mt-4">
+    <asp:Panel runat="server" ID="pan_data" Visible="false" class="mt-4">
         <asp:Label runat="server" ID="lbl_magazzino" class="fw-bold"></asp:Label>
         <div class="row flex-column bg-head">
             <asp:Label runat="server" ID="lbl_ordine" class="fw-bold"></asp:Label>
@@ -53,9 +54,10 @@
                 <span class="font-small"><i>Linea</i></span><br />
                 <asp:TextBox runat="server" ID="txt_lin" CssClass="form-control" Enabled="false"></asp:TextBox>
             </div>
-            <div class="col-4 col-md-2" style="align-self:end">
-                <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClick="btn_conferma_Click"/>
-             </div>
+            <div class="col-4 col-md-2" style="align-self: end">
+                <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClick="btn_conferma_Click" />
+<%--                <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClientClick="disableButton(this);" OnClick="btn_conferma_Click" /> --%>
+                </div>
         </div>
     </asp:Panel>
 
@@ -65,4 +67,13 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="CPH_JS" runat="server">
+    <script type="text/javascript">
+        function disableButton(button) {
+            console.log(button.id)
+
+            button.disabled = true;
+            //__doPostBack(button.id, ''); // Manually trigger the postback
+            //return false; // Prevent the default form submission
+        }
+    </script>
 </asp:Content>

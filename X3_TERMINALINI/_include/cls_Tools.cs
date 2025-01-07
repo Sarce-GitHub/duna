@@ -352,7 +352,7 @@ namespace X3_TERMINALINI
         }
 
 
-        public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, out string _err, out string _res)
+        public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, string _NPACCHI, out string _err, out string _res)
         {
             _err = "";
             _res = "";
@@ -367,6 +367,7 @@ namespace X3_TERMINALINI
             src_Data.Add(new Xml_Data("IN_PALNUM", _PALNUM, ""));
             src_Data.Add(new Xml_Data("IN_AVM", "2", "Integer"));
             src_Data.Add(new Xml_Data("IN_AVO", "2", "Integer"));
+            src_Data.Add(new Xml_Data("IN_PACCHI", _NPACCHI, "Integer"));
 
 
             //string xmlString = ConvertToXmlString(src_Data);
