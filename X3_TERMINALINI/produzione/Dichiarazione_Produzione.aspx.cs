@@ -23,7 +23,12 @@ namespace X3_TERMINALINI.produzione
 
             frm_OK.Text = "";
             frm_error.Text = "";
-            if (!IsPostBack) txt_Ricerca.Focus();
+            if (!IsPostBack)
+            {
+                txt_Ricerca.Focus();
+                btn_conferma.OnClientClick = ClientScript.GetPostBackEventReference(btn_conferma, "") + "; disableButton(this);";
+            }
+
 
         }
 

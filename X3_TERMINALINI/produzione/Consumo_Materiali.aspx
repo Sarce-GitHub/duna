@@ -56,7 +56,8 @@
             </div>
             <div class="col-4 col-md-2" style="align-self: end">
                 <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClick="btn_conferma_Click" />
-            </div>
+<%--                <asp:Button runat="server" ID="btn_conferma" CssClass="form-control btn btn-warning" Text="Conferma" OnClientClick="disableButton(this);" OnClick="btn_conferma_Click" /> --%>
+                </div>
         </div>
     </asp:Panel>
 
@@ -66,4 +67,13 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="CPH_JS" runat="server">
+    <script type="text/javascript">
+        function disableButton(button) {
+            console.log(button.id)
+
+            button.disabled = true;
+            //__doPostBack(button.id, ''); // Manually trigger the postback
+            //return false; // Prevent the default form submission
+        }
+    </script>
 </asp:Content>

@@ -28,7 +28,12 @@ namespace X3_TERMINALINI.produzione
 
             frm_OK.Text = "";
             frm_error.Text = "";
-            if (!IsPostBack) txt_Ricerca.Focus();
+            if (!IsPostBack)
+            {
+                txt_Ricerca.Focus();
+                btn_conferma.OnClientClick = ClientScript.GetPostBackEventReference(btn_conferma, "") + "; disableButton(this);";
+            }
+
 
         }
 
@@ -142,12 +147,12 @@ namespace X3_TERMINALINI.produzione
                 //    return;
                 //}
                 string _res = "";
-                btn_conferma.Enabled = false;
                 var wsAvanzamentoCompleto = cls_TermWS.WS_AvanzamentoCompleto(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, hf_UM.Value, QTY, COEFF, hf_PALNUM.Value, hf_NPACCHI.Value, out error, out _res);
                 if (wsAvanzamentoCompleto)
                 {
                     frm_OK.Text = "Dichiarazione Effettuata: " + _res;
                     pan_data.Visible = false;
+                    txt_Ricerca.Focus();
                 }
                 else
                 {

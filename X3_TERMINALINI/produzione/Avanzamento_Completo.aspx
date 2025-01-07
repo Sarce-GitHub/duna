@@ -71,4 +71,9 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="CPH_JS" runat="server">
+    <script type="text/javascript">
+        function disableButton(button) {
+            button.disabled = true;
+        }
+    </script>
 </asp:Content>
