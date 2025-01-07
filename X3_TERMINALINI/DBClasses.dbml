@@ -422,4 +422,9 @@
       <Column Name="LOC_0" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="" Member="YTSBARCODE">
+    <Type Name="YTSBARCODE">
+      <Column Member="BARCODE_0" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

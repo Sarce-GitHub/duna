@@ -37,9 +37,10 @@ namespace X3_TERMINALINI.produzione
             pan_data.Visible = false;
             ResetHiddenFields();
 
+            string barcode = txt_Ricerca.Text.Trim().ToUpper();
             string[] Arr = txt_Ricerca.Text.Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if(Arr.Length != 3)
+            if(Arr.Length != 4)
             {
                 frm_error.Text = "Formato barcode non valido";
                 txt_Ricerca.Text = "";
@@ -50,6 +51,15 @@ namespace X3_TERMINALINI.produzione
             hf_ODP.Value = !string.IsNullOrEmpty(Arr[0]) ? Arr[0] : "";
             hf_QTY.Value = !string.IsNullOrEmpty(Arr[1]) ? decimal.Parse(Arr[1]).ToString("0.###") : "";
             hf_PALNUM.Value = !string.IsNullOrEmpty(Arr[2]) ? Arr[2] : "";
+            hf_NPACCHI.Value = !string.IsNullOrEmpty(Arr[3]) ? Arr[3] : "";
+
+            if (_SQL.IsBarcodeAlreadyRead(txt_Ricerca.Text.Trim().ToUpper()))
+            {
+                frm_error.Text = "Il barcode risulta già elaborato";
+                txt_Ricerca.Text = "";
+                txt_Ricerca.Focus();
+                return;
+            }
 
             if (txt_Ricerca.Text.Trim() != "")
             {
@@ -132,7 +142,8 @@ namespace X3_TERMINALINI.produzione
                 //    return;
                 //}
                 string _res = "";
-                var wsAvanzamentoCompleto = cls_TermWS.WS_AvanzamentoCompleto(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, hf_UM.Value, QTY, COEFF, hf_PALNUM.Value, out error, out _res);
+                btn_conferma.Enabled = false;
+                var wsAvanzamentoCompleto = cls_TermWS.WS_AvanzamentoCompleto(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, hf_UM.Value, QTY, COEFF, hf_PALNUM.Value, hf_NPACCHI.Value, out error, out _res);
                 if (wsAvanzamentoCompleto)
                 {
                     frm_OK.Text = "Dichiarazione Effettuata: " + _res;
@@ -152,7 +163,7 @@ namespace X3_TERMINALINI.produzione
                 txt_qta.Text = "";
                 txt_qta.Focus();
             }
-
+            btn_conferma.Enabled = true;
         }
 
         private void ResetHiddenFields()
@@ -164,6 +175,7 @@ namespace X3_TERMINALINI.produzione
             hf_COEFF.Value = 0.ToString("0.#####");
             hf_PALNUM.Value = "";
             hf_QTY.Value = 0.ToString("0.###");
+            hf_NPACCHI.Value = "";
         }
 
     }

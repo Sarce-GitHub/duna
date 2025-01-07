@@ -232,6 +232,14 @@ namespace X3_TERMINALINI
 				return this.GetTable<YSCARMAT>();
 			}
 		}
+		
+		public System.Data.Linq.Table<YTSBARCODE> YTSBARCODE
+		{
+			get
+			{
+				return this.GetTable<YTSBARCODE>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute()]
@@ -8550,6 +8558,33 @@ namespace X3_TERMINALINI
 				if ((this._LOC_0 != value))
 				{
 					this._LOC_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class YTSBARCODE
+	{
+		
+		private string _BARCODE_0;
+		
+		public YTSBARCODE()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE_0", CanBeNull=false)]
+		public string BARCODE_0
+		{
+			get
+			{
+				return this._BARCODE_0;
+			}
+			set
+			{
+				if ((this._BARCODE_0 != value))
+				{
+					this._BARCODE_0 = value;
 				}
 			}
 		}

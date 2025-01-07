@@ -3278,6 +3278,15 @@ namespace X3_TERMINALINI
                 }
             }
 
+        public bool IsBarcodeAlreadyRead(string barcode)
+        {
+            using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+            {
+                return db.YTSBARCODE.Where(w => w.BARCODE_0 == barcode).Any();
+            }
+
+        }
+
         #endregion
         #endregion
 

@@ -18,6 +18,8 @@
     <asp:HiddenField ID="hf_ODP" runat="server" />
     <asp:HiddenField ID="hf_QTY" runat="server" />
     <asp:HiddenField ID="hf_PALNUM" runat="server" />
+    <asp:HiddenField ID="hf_NPACCHI" runat="server" />
+
 
 
     <div class="row">
