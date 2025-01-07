@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 15.375" name="DBClasses">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.625, 15.375" name="DBClasses">
   <DataContextMoniker Name="/DBClassesDataContext" />
   <nestedChildShapes>
     <classShape Id="1000178a-ff65-453e-9b16-e0cd29d5cd03" isExpanded="false" absoluteBounds="0.5, 1.375, 2, 0.45">
@@ -116,6 +116,12 @@
       <DataClassMoniker Name="/DBClassesDataContext/AVALNUM" />
       <nestedChildShapes>
         <elementListCompartment Id="3eee17aa-9eb3-450d-b67e-60ff3f6a2a0c" absoluteBounds="7.265, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34504103-ed90-4ef2-aea9-bc456ba7de1c" absoluteBounds="11.375, 7.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DBClassesDataContext/YSCARMAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1fa5550-8b40-473d-b15f-2646cb9b9d42" absoluteBounds="11.39, 8.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

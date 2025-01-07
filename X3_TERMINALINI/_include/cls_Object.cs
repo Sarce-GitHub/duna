@@ -869,6 +869,8 @@ namespace X3_TERMINALINI
         public string TSICOD_0 { get; set; }
         public string TSICOD_3 { get; set; }
 
+        public string LOC_0 { get; set; }
+
 
         public string PCU_0 { get; set; }
         public decimal PCUSTUCOE_0 { get; set; }
@@ -893,6 +895,8 @@ namespace X3_TERMINALINI
             TSICOD_3 = "";
             PCU_0 = "";
             PCUSTUCOE_0 = 0;
+
+            LOC_0 = ""; // ITMMASTER.STOCK
         }
         public decimal RESTO
         {
@@ -950,5 +954,71 @@ namespace X3_TERMINALINI
         }
 
     }
+
+    public class Obj_YSCARMAT
+    {
+        //PROPRIETA' MFGMAT
+        public string MFGFCY_0 { get; set; }
+        public string MFGNUM_0 { get; set; }
+        public int MFGLIN_0 { get; set; }
+        public string ITMREF_0 { get; set; }
+        private string _LOT_0;
+        public string STU_0 { get; set; }
+        public decimal RETQTY_0 { get; set; }
+        public decimal USEQTY_0 { get; set; }
+        public short BOMSEQ_0 { get; set; }
+        public short BOMOPE_0 { get; set; }
+
+        //PROPRIETA' ITMMASTER
+        public string ITMDES1_0 { get; set; }
+
+        public string TSICOD_0 { get; set; }
+        public string TSICOD_3 { get; set; }
+
+        public string PCU_0 { get; set; }
+        public decimal PCUSTUCOE_0 { get; set; }
+
+        //PROPRIETA' STOCK
+        public string LOT_0
+        {
+            get => _LOT_0;
+            set => _LOT_0 = value?.Trim();
+        }
+
+        public string LOC_0 { get; set; }
+
+        public Obj_YSCARMAT()
+        {
+            //PROPRIETA' MFGMAT   
+            MFGFCY_0 = "";
+            MFGNUM_0 = "";
+            MFGLIN_0 = 0;
+            ITMREF_0 = "";
+            STU_0 = "";
+            RETQTY_0 = 0;
+            USEQTY_0 = 0;
+            BOMSEQ_0 = 0;
+            BOMOPE_0 = 0;
+
+            //PROPRIETA' ITMMASTER
+            ITMDES1_0 = "";
+            TSICOD_0 = "";
+            TSICOD_3 = "";
+            PCU_0 = "";
+            PCUSTUCOE_0 = 0;
+
+            //PROPRIETA' STOCK
+            LOT_0 = "";
+            LOC_0 = "";
+        }
+        public decimal RESTO
+        {
+            get
+            {
+                return RETQTY_0 - USEQTY_0;
+            }
+        }
+    }
     #endregion
+
 }

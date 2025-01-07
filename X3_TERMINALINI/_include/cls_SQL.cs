@@ -3200,6 +3200,7 @@ namespace X3_TERMINALINI
                                  PCU_0 = i.PCU_0,
                                  TSICOD_0 = i.TSICOD_0,
                                  TSICOD_3 = i.TSICOD_3,
+                                 LOC_0 =  i.STOCK.LOC_0
                              };
                     OUT_Obj = _i.FirstOrDefault();
 
@@ -3221,6 +3222,61 @@ namespace X3_TERMINALINI
                 return new Obj_MFGMAT_ITMMASTER_PRODUZIONE();
             }
         }
+
+
+        public Obj_YSCARMAT Obj_YSCARMAT_Load(string IN_FCY, string IN_MFGNUM, string IN_ITMREF, string IN_LOT, out string error)
+            {
+                // Inizializzazione
+                Obj_YSCARMAT OUT_Obj = new Obj_YSCARMAT();
+                error = "";
+                // Gestione Errore
+                try
+                {
+                    // DB
+                    using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+                    {
+                        var _i = from m in db.YSCARMAT
+                                 join i in db.ITMMASTER on m.ITMREF_0 equals i.ITMREF_0
+                                 where m.MFGNUM_0 == IN_MFGNUM && m.MFGFCY_0 == IN_FCY && m.ITMREF_0 == IN_ITMREF && m.LOT_0 == IN_LOT
+                                 select new Obj_YSCARMAT
+                                 {
+                                     MFGFCY_0 = m.MFGFCY_0,
+                                     MFGNUM_0 = m.MFGNUM_0,
+                                     MFGLIN_0 = m.MFGLIN_0,
+                                     ITMREF_0 = m.ITMREF_0,
+                                     STU_0 = m.STU_0,
+                                     RETQTY_0 = m.RETQTY_0,
+                                     USEQTY_0 = m.USEQTY_0,
+                                     BOMOPE_0 = m.BOMOPE_0,
+                                     BOMSEQ_0 = m.BOMSEQ_0,
+                                     ITMDES1_0 = i.ITMDES1_0,
+                                     PCUSTUCOE_0 = i.PCUSTUCOE_0,
+                                     PCU_0 = i.PCU_0,
+                                     TSICOD_0 = i.TSICOD_0,
+                                     TSICOD_3 = i.TSICOD_3,
+                                     LOT_0 = m.LOT_0,
+                                     LOC_0 = m.LOC_0
+                                 };
+                        OUT_Obj = _i.FirstOrDefault();
+
+                        if (OUT_Obj != null)
+                        {
+                            return OUT_Obj;
+                        }
+                        else
+                        {
+                            error = "Materiale non trovato";
+                            return new Obj_YSCARMAT();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log Errore Generico
+                    error = ex.Message;
+                    return new Obj_YSCARMAT();
+                }
+            }
 
         #endregion
         #endregion

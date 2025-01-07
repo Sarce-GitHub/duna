@@ -72,8 +72,8 @@ namespace X3_TERMINALINI.produzione
             hf_LOT.Value = _e.LOT.Trim().ToUpper();
 
             //Obj_MFGMAT_ITMMASTER_PRODUZIONE 
-            Obj_MFGMAT_ITMMASTER_PRODUZIONE s = _SQL.Obj_MFGMAT_ITMMASTER_PRODUZIONE_Load(_USR.FCY_0, txt_ordine.Text.Trim().ToUpper(), hf_ITMREF.Value, hf_LOT.Value, out error);
-
+            //Obj_MFGMAT_ITMMASTER_PRODUZIONE s = _SQL.Obj_MFGMAT_ITMMASTER_PRODUZIONE_Load(_USR.FCY_0, txt_ordine.Text.Trim().ToUpper(), hf_ITMREF.Value, hf_LOT.Value, out error);
+                Obj_YSCARMAT s = _SQL.Obj_YSCARMAT_Load(_USR.FCY_0, txt_ordine.Text.Trim().ToUpper(), hf_ITMREF.Value, hf_LOT.Value, out error);
             if (!string.IsNullOrEmpty(error))
             {
                 frm_error.Text = error;
@@ -84,7 +84,8 @@ namespace X3_TERMINALINI.produzione
                 return;
             }
 
-            isFamigliaStatistica = s.TSICOD_3 == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK;
+
+            isFamigliaStatistica = s.TSICOD_3 == Properties.Settings.Default.CONS_MATERIALI_TSICOD_TO_CHECK; //ex TSICOD_3
 
             string[] Arr = txt_etichetta.Text.Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             string lot = !string.IsNullOrEmpty(s.LOT_0) ? " " + Properties.Settings.Default.Etic_Split +  " " + s.LOT_0 : "";
@@ -110,6 +111,7 @@ namespace X3_TERMINALINI.produzione
             hf_CURRENTQTY.Value = txt_qta.Text;
             hf_COEFF.Value = isFamigliaStatistica ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
             hf_TSICOD.Value = s.TSICOD_3;
+            hf_LOC.Value = s.LOC_0;
 
         }
 
@@ -159,9 +161,9 @@ namespace X3_TERMINALINI.produzione
                 //    txt_qta.Focus();
                 //    return;
                 //}
-
+                btn_conferma.Enabled = false;
                 string _res = "";
-                var wsConsumoMateriali = cls_TermWS.WS_ConsumoMateriali(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, txt_UM.Text.Trim().ToUpper(), QTY, "BGL01", hf_MFGLIN.Value.ToString(), hf_BOMSEQ.Value.ToString(), hf_OPE.Value.ToString(), out error, out _res);
+                var wsConsumoMateriali = cls_TermWS.WS_ConsumoMateriali(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, txt_UM.Text.Trim().ToUpper(), QTY, hf_LOC.Value, hf_MFGLIN.Value.ToString(), hf_BOMSEQ.Value.ToString(), hf_OPE.Value.ToString(), out error, out _res);
                 if (wsConsumoMateriali)
                 {
                     frm_OK.Text = "Consumo Effettuato: " + _res;
@@ -181,10 +183,12 @@ namespace X3_TERMINALINI.produzione
                 txt_qta.Text = "";
                 txt_qta.Focus();
             }
+            btn_conferma.Enabled = true;
 
         }
 
         private void ResetHiddenFields()
+
         {
             hf_MFGNUM.Value = "";
             hf_MFGLIN.Value = 0.ToString("0.###");
@@ -196,6 +200,7 @@ namespace X3_TERMINALINI.produzione
             hf_CURRENTQTY.Value = 0.ToString("0.###");
             hf_COEFF.Value = 0.ToString("0.###");
             hf_TSICOD.Value = "";
+            hf_LOC.Value = "";
         }
     }
 }
