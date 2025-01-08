@@ -44,8 +44,8 @@ namespace X3_TERMINALINI.spedizione
                 Response.Redirect("Ordine.aspx", true);
                 return;
             }
-            Ricerca();
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
+            Ricerca();
 
             txt_Pallet.Focus();
             if (Obj_Cookie.Get_String("prebolla-palnum") != "")

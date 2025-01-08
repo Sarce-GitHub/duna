@@ -54,8 +54,8 @@ namespace X3_TERMINALINI.spedizione
             _PERIODE = _DATE_A.ToString("yy");
             //_AUTOPALNUM = "PL" + _PERIODE + "-" + _SQL.GetFirstAvailablePalnum(short.Parse(_PERIODE));
 
-            Ricerca();
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
+            Ricerca();
 
             txt_Pallet.Focus();
             if (Obj_Cookie.Get_String("prebolla-palnum") != "")
