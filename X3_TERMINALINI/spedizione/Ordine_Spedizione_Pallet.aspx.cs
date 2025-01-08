@@ -40,6 +40,11 @@ namespace X3_TERMINALINI.spedizione
                 if (Arr.Length > 4) _SOHNUM = Arr[4];
 
                 var ordini = _SQL.Obj_YTSORDAPE_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A);
+                
+                if(!string.IsNullOrEmpty(_SOHNUM))
+                {
+                    ordini.Where(w => w.SOHNUM_0 == _SOHNUM).ToList();
+                }
 
                 lbl_pallet.Text = "PALLET:" + Request.QueryString["PALNUM"];
                 _SQL.obj_PALNUM_GetListStock(_USR.FCY_0, Request.QueryString["PALNUM"], out _STOCK);
@@ -47,7 +52,7 @@ namespace X3_TERMINALINI.spedizione
                 var outOfStockItems = new List<string>();
 
                 if (!articoliNonCompatibiliOrdine.Any())
-                {
+                {   
                     outOfStockItems = CheckQtaCompatibili(ordini, _STOCK);
                     if(outOfStockItems.Any())
                     {

@@ -69,11 +69,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="CPH_JS" runat="server">
     <script type="text/javascript">
         function disableButton(button) {
-            console.log(button.id)
-
             button.disabled = true;
-            //__doPostBack(button.id, ''); // Manually trigger the postback
-            //return false; // Prevent the default form submission
         }
     </script>
 </asp:Content>
