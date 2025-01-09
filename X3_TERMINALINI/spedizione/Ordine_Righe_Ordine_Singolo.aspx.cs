@@ -19,6 +19,7 @@ namespace X3_TERMINALINI.spedizione
         string  _PERIODE  = "";
         string _SOHNUM = "";
         string _AUTOPALNUM = "";
+        string _FORCEDPALLET = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!cls_Tools.Check_User()) return;
@@ -28,15 +29,12 @@ namespace X3_TERMINALINI.spedizione
 
             string[] Arr = Request.QueryString["BC"].Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (Arr.Length != 4 && Arr.Length != 5)
+            if (Arr.Length != 4 && Arr.Length != 5 && Arr.Length != 6)
             {
                 Response.Redirect("Ordine.aspx", true);
                 return;
             }
 
-
-
-            //
             _BPCORD = Arr[0];
             _BPAADD = Arr[1];
             if (!DateTime.TryParse(Arr[2].Substring(0, 4) + "-" + Arr[2].Substring(4, 2) + "-" + Arr[2].Substring(6, 2), out _DATE_DA))
@@ -50,6 +48,7 @@ namespace X3_TERMINALINI.spedizione
                 return;
             }
             if(Arr.Length > 4) _SOHNUM = Arr[4];
+            if(Arr.Length > 5 ) _FORCEDPALLET = Arr[5];
 
             _PERIODE = _DATE_A.ToString("yy");
             //_AUTOPALNUM = "PL" + _PERIODE + "-" + _SQL.GetFirstAvailablePalnum(short.Parse(_PERIODE));
@@ -94,7 +93,10 @@ namespace X3_TERMINALINI.spedizione
 
             if(string.IsNullOrEmpty(Obj_Cookie.Get_String("prebolla-palnum")))
             {
-                var suggestedPalnum = listOrdine.OrderByDescending(w => w.PALNUM_0).Select(w => w.PALNUM_0).FirstOrDefault();
+                var suggestedPalnum = !string.IsNullOrEmpty(_FORCEDPALLET) 
+                                        ? _FORCEDPALLET 
+                                        : listOrdine.OrderByDescending(w => w.PALNUM_0).Select(w => w.PALNUM_0).FirstOrDefault();
+
                 if(string.IsNullOrEmpty(suggestedPalnum) || suggestedPalnum == " ")
                 {
                     var _num = "";
@@ -116,21 +118,21 @@ namespace X3_TERMINALINI.spedizione
                 //var qtyPreparata = _SQL.Obj_STOALL_Lista(_i.SOHNUM_0, _i.SOPLIN_0, _i.SOQSEQ_0, _i.ITMREF_0);
 
                 var ordini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, _i.ITMREF_0, _i.SAU_0)
-                .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM)
-                .OrderBy(o => o.SHIDAT_0)
-                .ThenBy(o => o.SOHNUM_0)
-                .GroupBy(o => new { o.SOHNUM_0, o.QTYSTU_0, o.SAU_0, o.DLVQTYSTU_0, o.SHIDAT_0 })
-                .Select(group => new
-                {
-                    group.Key.SOHNUM_0,
-                    group.Key.QTYSTU_0,
-                    group.Key.SAU_0,
-                    //group.Key.PALNUM_0,
-                    group.Key.DLVQTYSTU_0,
-                    group.Key.SHIDAT_0,
+                                    .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM)
+                                    .OrderBy(o => o.SHIDAT_0)
+                                    .ThenBy(o => o.SOHNUM_0)
+                                    .GroupBy(o => new { o.SOHNUM_0, o.QTYSTU_0, o.SAU_0, o.DLVQTYSTU_0, o.SHIDAT_0 })
+                                    .Select(group => new
+                                    {
+                                        group.Key.SOHNUM_0,
+                                        group.Key.QTYSTU_0,
+                                        group.Key.SAU_0,
+                                        //group.Key.PALNUM_0,
+                                        group.Key.DLVQTYSTU_0,
+                                        group.Key.SHIDAT_0,
 
-                    Items = group.ToList()
-                });
+                                        Items = group.ToList()
+                                    });
 
                 var listaOrdiniConPallet = ordini
                 .GroupBy(o => o.SOHNUM_0)

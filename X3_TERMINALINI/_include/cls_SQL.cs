@@ -2420,7 +2420,8 @@ namespace X3_TERMINALINI
                             QTYPREP_0 = item.QTYPREP_0,
                             YPCU_0 = item.YPCU_0,
                             YPCUSTUCOE_0 = item.YPCUSTUCOE_0,
-                            LOC_0 = item.LOC_0
+                            LOC_0 = item.LOC_0,
+                            PALNUM_0= item.PALNUM_0
                         };
                         Lista.Add(_YTSORDAPE);
                     }

@@ -37,11 +37,21 @@ namespace X3_TERMINALINI.spedizione
         {
             pan_dati.Controls.Clear();
 
-            bool isOrdine = _SQL.Obj_YTSORDAPE_Ordine_Singolo_Any(_USR.FCY_0, txt_RicercaBC.Text.Trim().ToUpper(), false);
+            string[] ricerca = txt_RicercaBC.Text.Trim().ToUpper().Split(Properties.Settings.Default.Etic_Split.ToCharArray());
+            string nOrdine = ricerca[0];
+            string pallet = ricerca.Length == 2 ? ricerca[1] : "";
+
+            bool isOrdine = _SQL.Obj_YTSORDAPE_Ordine_Singolo_Any(_USR.FCY_0, nOrdine, false);
             if (isOrdine)
             {
                 string bc = "";
-                _SQL.Obj_YTSORDAPE_Ordine_Singolo_BC(_USR.FCY_0, txt_RicercaBC.Text.Trim().ToUpper(), false, out bc);
+                _SQL.Obj_YTSORDAPE_Ordine_Singolo_BC(_USR.FCY_0, nOrdine, false, out bc);
+
+                if(!string.IsNullOrEmpty(pallet)) 
+                {
+                    bc += (Properties.Settings.Default.Etic_Split + pallet);
+                }
+
                 Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + bc, true);
                 return;
             }

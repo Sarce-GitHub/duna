@@ -25,7 +25,7 @@ namespace X3_TERMINALINI.spedizione
             if (Request.QueryString["BC"] == null) Response.Redirect("Ordine.aspx", true);
 
             string[] Arr = Request.QueryString["BC"].Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-            if (Arr.Length != 4 && Arr.Length != 5)
+            if (Arr.Length != 4 && Arr.Length != 5 && Arr.Length != 6)
             {
                 Response.Redirect("Ordine.aspx", true);
                 return;
