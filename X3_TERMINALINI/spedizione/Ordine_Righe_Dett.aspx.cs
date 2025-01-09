@@ -37,7 +37,7 @@ namespace X3_TERMINALINI.spedizione
             //LOT=CFB08671AAA-L2430005566
             
             string[] Arr = Obj_Cookie.Get_String("prebolla-bc").ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-            if (Arr.Length != 4 && Arr.Length != 5)
+            if (Arr.Length != 4 && Arr.Length != 5 && Arr.Length != 6)
             {
                 Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"));
                 return;
@@ -57,7 +57,7 @@ namespace X3_TERMINALINI.spedizione
                 return;
             }
             //
-            lbl_Articolo.Text = _Etic.ITMREF + " - " + _Etic.LOT;
+            lbl_Articolo.Text = _Etic.ITMREF + Properties.Settings.Default.Etic_Split + _Etic.LOT;
             btn_Annulla.Visible = false;
             btn_Conferma.Visible = false;
             txt_Partenza.Focus();
@@ -216,14 +216,14 @@ namespace X3_TERMINALINI.spedizione
                                     && w.LOC_0 == txt_Partenza.Text.Trim().ToUpper())
                                     .FirstOrDefault().QTYSTU_0 * -1;
 
-                        if (cls_TermWS.WS_AllocaDett(_ord.SOHNUM_0, _ord.SOPLIN_0.ToString(), _USR.FCY_0, _Etic.LOT, _ord.PALNUM_0, txt_Partenza.Text.Trim().ToUpper(), QTYDISALL, out error))
+                        if (cls_TermWS.WS_AllocaDett(_ord.SOHNUM_0, _ord.SOPLIN_0.ToString(), _USR.FCY_0, _Etic.LOT, _ord.PALNUM_0.Trim(), txt_Partenza.Text.Trim().ToUpper(), QTYDISALL, out error))
                         {
                             Obj_STOCK _stock = new Obj_STOCK()
                             {
                                 ITMREF_0 = _ord.ITMREF_0,
                                 LOT_0 = _Etic.LOT,
                                 STA_0 = "A",
-                                PALNUM_0 = _ord.PALNUM_0,
+                                PALNUM_0 = _ord.PALNUM_0.Trim(),
                                 LOC_0 = txt_Partenza.Text.Trim().ToUpper(),
                                 SLO_0 = _Etic.SLO,
                                 PCU_0 = lbl_UM.Text.Trim().ToUpper(),

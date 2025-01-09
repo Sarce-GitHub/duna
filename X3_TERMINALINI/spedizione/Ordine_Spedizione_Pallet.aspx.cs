@@ -40,6 +40,11 @@ namespace X3_TERMINALINI.spedizione
                 if (Arr.Length > 4) _SOHNUM = Arr[4];
 
                 var ordini = _SQL.Obj_YTSORDAPE_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A);
+                
+                if(!string.IsNullOrEmpty(_SOHNUM))
+                {
+                    ordini.Where(w => w.SOHNUM_0 == _SOHNUM).ToList();
+                }
 
                 lbl_pallet.Text = "PALLET:" + Request.QueryString["PALNUM"];
                 _SQL.obj_PALNUM_GetListStock(_USR.FCY_0, Request.QueryString["PALNUM"], out _STOCK);
@@ -47,7 +52,7 @@ namespace X3_TERMINALINI.spedizione
                 var outOfStockItems = new List<string>();
 
                 if (!articoliNonCompatibiliOrdine.Any())
-                {
+                {   
                     outOfStockItems = CheckQtaCompatibili(ordini, _STOCK);
                     if(outOfStockItems.Any())
                     {
@@ -140,18 +145,16 @@ namespace X3_TERMINALINI.spedizione
 
             using (SqlConnection conn = new SqlConnection(connectionSQL))
             {
-                conn.Open();
-                SqlTransaction transaction = conn.BeginTransaction();
-
                 try
                 {
                     foreach (var item in _STOCK)
                     {
                         var QTY = item.QTYPCU_0;
+                        var listaOrdini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, item.ITMREF_0, item.PCU_0)
+                                                        .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM).ToList();
+                        listaOrdini = listaOrdini.Where(x => x.PALNUM_0 == item.PALNUM_0).ToList();
 
-                        foreach (Obj_YTSORDAPE _ord in _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, item.ITMREF_0, item.PCU_0)
-                                                        .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM))
-
+                        foreach (Obj_YTSORDAPE _ord in listaOrdini)
                         {
 
                             if (QTY > 0)//(_ord.QTY_MANC > 0 && QTY > 0)
@@ -167,21 +170,27 @@ namespace X3_TERMINALINI.spedizione
                                 }
                                 else
                                 {
-                                    transaction.Rollback();
+                                    frm_error.Text = err;
                                     return;
                                 }
                             }
                         }
 
                     }
-                    transaction.Commit();
-                    Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
-                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+
+                    //TOFIX: LOGICA VOLUTA PER STAMPA ERRATA ETICHETTE
+                    /******************************************************************************************************************/
+                    if(Request.QueryString["PALNUM"].StartsWith("P"))
+                    {
+                        Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
+                    }
+                    /******************************************************************************************************************/
+                    Response.Redirect("Ordine.aspx", true);
+
 
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
                     frm_error.Text = ex.Message;
                 }
             }

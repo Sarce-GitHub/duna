@@ -25,7 +25,7 @@ namespace X3_TERMINALINI.spedizione
             if (Request.QueryString["BC"] == null) Response.Redirect("Ordine.aspx", true);
 
             string[] Arr = Request.QueryString["BC"].Trim().ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-            if (Arr.Length != 4 && Arr.Length != 5)
+            if (Arr.Length != 4 && Arr.Length != 5 && Arr.Length != 6)
             {
                 Response.Redirect("Ordine.aspx", true);
                 return;
@@ -44,8 +44,8 @@ namespace X3_TERMINALINI.spedizione
                 Response.Redirect("Ordine.aspx", true);
                 return;
             }
-            Ricerca();
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
+            Ricerca();
 
             txt_Pallet.Focus();
             if (Obj_Cookie.Get_String("prebolla-palnum") != "")
