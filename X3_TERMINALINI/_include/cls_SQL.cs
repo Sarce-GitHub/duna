@@ -3116,7 +3116,7 @@ namespace X3_TERMINALINI
 
         #endregion
 
-    #region PRODUZIONE
+        #region PRODUZIONE
         #region MFGITM
         public Obj_MFGITM_ITMMASTER_PRODUZIONE Obj_MFGITM_ITMMASTER_PRODUZIONE_Load(string IN_FCY, string IN_MFGNUM, out string error)
         {
@@ -3145,6 +3145,7 @@ namespace X3_TERMINALINI
                                  STU_0 = i.STU_0,
                                  EXTQTY_0 = p.EXTQTY_0,
                                  RMNEXTQTY_0 = p.RMNEXTQTY_0,
+                                 UOMEXTQTY_0 = p.UOMEXTQTY_0,
                              };
                     OUT_Obj = _i.FirstOrDefault();
 
@@ -3286,6 +3287,43 @@ namespace X3_TERMINALINI
                 return db.YTSBARCODE.Where(w => w.BARCODE_0 == barcode).Any();
             }
 
+        }
+
+        public Obj_YCONSMAT Obj_YCONSMAT_Load(string nOrdine, out string error)
+        {
+            Obj_YCONSMAT OUT_Obj = new Obj_YCONSMAT();
+            error = "";
+
+            try
+            {
+                using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+                {
+                    var _i = from m in db.YCONSMAT
+                             where m.MFGNUM_0 == nOrdine
+                             select new Obj_YCONSMAT
+                             {
+                                 MFGNUM_0 = m.MFGNUM_0,
+                                 USEQTY_0 = m.USEQTY_0,
+                                 STDQTY_0 = m.STDQTY_0,
+                             };
+                    OUT_Obj = _i.FirstOrDefault();
+
+                    if (OUT_Obj != null)
+                    {
+                        return OUT_Obj;
+                    }
+                    else
+                    {
+                        error = "Materiale non trovato";
+                        return new Obj_YCONSMAT();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return new Obj_YCONSMAT();
+            }
         }
 
         #endregion
