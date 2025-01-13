@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="X3_TERMINALINI.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="BaseTitle" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">MAGAZZINO X3</Value>
-    </Setting>
     <Setting Name="SQL_Catalog" Type="System.String" Scope="Application">
       <Value Profile="(Default)">sqlx3</Value>
     </Setting>
@@ -12,9 +9,6 @@
       <Value Profile="(Default)">tiger</Value>
     </Setting>
     <Setting Name="WS_User" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">admin</Value>
-    </Setting>
-    <Setting Name="WS_Pws" Type="System.String" Scope="Application">
       <Value Profile="(Default)">admin</Value>
     </Setting>
     <Setting Name="WS_Lan" Type="System.String" Scope="Application">
@@ -32,23 +26,8 @@
     <Setting Name="RIC_TipoUbic" Type="System.String" Scope="Application">
       <Value Profile="(Default)">RIC</Value>
     </Setting>
-    <Setting Name="Etic_Split" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">-</Value>
-    </Setting>
-    <Setting Name="BaseVers" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">V</Value>
-    </Setting>
     <Setting Name="Abli_MAG_EntrDiv" Type="System.String" Scope="Application">
       <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="SQL_IP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">192.168.200.11</Value>
-    </Setting>
-    <Setting Name="SQL_User" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">COLLAUDO</Value>
-    </Setting>
-    <Setting Name="WS_Pool" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">COLLAUDO</Value>
     </Setting>
     <Setting Name="SPED_BollaPrep" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
@@ -58,9 +37,6 @@
     </Setting>
     <Setting Name="Abil_SEAKEY_LOT" Type="System.String" Scope="Application">
       <Value Profile="(Default)">ZZZ</Value>
-    </Setting>
-    <Setting Name="WS_URL" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://192.168.200.13:8124/soap-generic/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC</Value>
     </Setting>
     <Setting Name="MAIL_SMTP" Type="System.String" Scope="Application">
       <Value Profile="(Default)">192.168.200.12</Value>
@@ -75,13 +51,64 @@
       <Value Profile="(Default)">25</Value>
     </Setting>
     <Setting Name="MAIL_TO_DDT" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">beccati@sarce.it</Value>
+      <Value Profile="(Default)">campodonico@sarce.it</Value>
     </Setting>
     <Setting Name="MAIL_FROM" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">dservices@eps-srl.com</Value>
+      <Value Profile="(Default)">test@mail.com</Value>
     </Setting>
     <Setting Name="Manage_SEAKEY" Type="System.String" Scope="Application">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BaseVers" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BETA</Value>
+    </Setting>
+    <Setting Name="BaseTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MAGAZZINO DUNA</Value>
+    </Setting>
+    <Setting Name="WS_Pws" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Duna2024_Admin!</Value>
+    </Setting>
+    <Setting Name="Etic_Split" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">|</Value>
+    </Setting>
+    <Setting Name="SQL_IP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.1.76\X3PU12</Value>
+    </Setting>
+    <Setting Name="SQL_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PROD</Value>
+    </Setting>
+    <Setting Name="WS_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.135:8124/soap-generic/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC </Value>
+    </Setting>
+    <Setting Name="WS_Pool" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PROD</Value>
+    </Setting>
+    <Setting Name="Manage_NAV" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Manage_DISIMPEGNO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Manage_MAG_PALLET" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Manage_PRESPED" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CONS_MATERIALI_TSICOD_TO_CHECK" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">INTTA</Value>
+    </Setting>
+    <Setting Name="DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">0.001</Value>
+    </Setting>
+    <Setting Name="BarCode_Only" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DICHIARAZIONE_PRODUZIONE_CHECK_TOLERANCE" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PRESPED_Ubic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PRESPED01</Value>
     </Setting>
   </Settings>
 </SettingsFile>

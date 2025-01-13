@@ -25,15 +25,6 @@ namespace X3_TERMINALINI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MAGAZZINO X3")]
-        public string BaseTitle {
-            get {
-                return ((string)(this["BaseTitle"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("sqlx3")]
         public string SQL_Catalog {
             get {
@@ -56,15 +47,6 @@ namespace X3_TERMINALINI.Properties {
         public string WS_User {
             get {
                 return ((string)(this["WS_User"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
-        public string WS_Pws {
-            get {
-                return ((string)(this["WS_Pws"]));
             }
         }
         
@@ -115,55 +97,10 @@ namespace X3_TERMINALINI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-")]
-        public string Etic_Split {
-            get {
-                return ((string)(this["Etic_Split"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("V")]
-        public string BaseVers {
-            get {
-                return ((string)(this["BaseVers"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public string Abli_MAG_EntrDiv {
             get {
                 return ((string)(this["Abli_MAG_EntrDiv"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.200.11")]
-        public string SQL_IP {
-            get {
-                return ((string)(this["SQL_IP"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COLLAUDO")]
-        public string SQL_User {
-            get {
-                return ((string)(this["SQL_User"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COLLAUDO")]
-        public string WS_Pool {
-            get {
-                return ((string)(this["WS_Pool"]));
             }
         }
         
@@ -184,35 +121,13 @@ namespace X3_TERMINALINI.Properties {
                 return ((string)(this["SPED_Ubic"]));
             }
         }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PRESPED")]
-        public string PRESPED_Ubic
-        {
-            get
-            {
-                return ((string)(this["PRESPED_Ubic"]));
-            }
-        }
-
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("ZZZ")]
         public string Abil_SEAKEY_LOT {
             get {
                 return ((string)(this["Abil_SEAKEY_LOT"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.200.13:8124/soap-generic/syracuse/collaboration/syracuse/CAdxWebSe" +
-            "rviceXmlCC")]
-        public string WS_URL {
-            get {
-                return ((string)(this["WS_URL"]));
             }
         }
         
@@ -254,7 +169,7 @@ namespace X3_TERMINALINI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("beccati@sarce.it")]
+        [global::System.Configuration.DefaultSettingValueAttribute("campodonico@sarce.it")]
         public string MAIL_TO_DDT {
             get {
                 return ((string)(this["MAIL_TO_DDT"]));
@@ -263,7 +178,7 @@ namespace X3_TERMINALINI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dservices@eps-srl.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("test@mail.com")]
         public string MAIL_FROM {
             get {
                 return ((string)(this["MAIL_FROM"]));
@@ -278,74 +193,159 @@ namespace X3_TERMINALINI.Properties {
                 return ((string)(this["Manage_SEAKEY"]));
             }
         }
-
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BETA")]
+        public string BaseVers {
+            get {
+                return ((string)(this["BaseVers"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MAGAZZINO DUNA")]
+        public string BaseTitle {
+            get {
+                return ((string)(this["BaseTitle"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Duna2024_Admin!")]
+        public string WS_Pws {
+            get {
+                return ((string)(this["WS_Pws"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("|")]
+        public string Etic_Split {
+            get {
+                return ((string)(this["Etic_Split"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.76\\X3PU12")]
+        public string SQL_IP {
+            get {
+                return ((string)(this["SQL_IP"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PROD")]
+        public string SQL_User {
+            get {
+                return ((string)(this["SQL_User"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.135:8124/soap-generic/syracuse/collaboration/syracuse/CAdxWebSer" +
+            "viceXmlCC ")]
+        public string WS_URL {
+            get {
+                return ((string)(this["WS_URL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PROD")]
+        public string WS_Pool {
+            get {
+                return ((string)(this["WS_Pool"]));
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string Manage_NAV
-        {
-            get
-            {
+        public string Manage_NAV {
+            get {
                 return ((string)(this["Manage_NAV"]));
             }
         }
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string Manage_PRESPED
-        {
-            get
-            {
-                return ((string)(this["Manage_PRESPED"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string Manage_DISIMPEGNO
-        {
-            get
-            {
+        public string Manage_DISIMPEGNO {
+            get {
                 return ((string)(this["Manage_DISIMPEGNO"]));
             }
         }
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string Manage_MAG_PALLET
-        {
-            get
-            {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public string Manage_MAG_PALLET {
+            get {
                 return ((string)(this["Manage_MAG_PALLET"]));
             }
         }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("INTTA")]
-        public string CONS_MATERIALI_TSICOD_TO_CHECK
-        {
-            get
-            {
-                return ((string)(this["CONS_MATERIALI_TSICOD_TO_CHECK"]));
-            }
-        }
-
-
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string BarCode_Only
-        {
-            get
-            {
+        public string Manage_PRESPED {
+            get {
+                return ((string)(this["Manage_PRESPED"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("INTTA")]
+        public string CONS_MATERIALI_TSICOD_TO_CHECK {
+            get {
+                return ((string)(this["CONS_MATERIALI_TSICOD_TO_CHECK"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.001")]
+        public decimal DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE {
+            get {
+                return ((decimal)(this["DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public string BarCode_Only {
+            get {
                 return ((string)(this["BarCode_Only"]));
             }
         }
-
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DICHIARAZIONE_PRODUZIONE_CHECK_TOLERANCE {
+            get {
+                return ((bool)(this["DICHIARAZIONE_PRODUZIONE_CHECK_TOLERANCE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PRESPED01")]
+        public string PRESPED_Ubic {
+            get {
+                return ((string)(this["PRESPED_Ubic"]));
+            }
+        }
     }
 }
