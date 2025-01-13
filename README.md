@@ -33,7 +33,8 @@
 - **Manage_PRESPED:** il valore True abilita la gestione dell'area di PRESPEDIZIONE, coi relativi pulsanti CARICO PRESPEDIZIONE e PREPARA PALLET
 - **Manage_MAG_PALLET** il valore True abilita la gestione nell'area magazzino delle operazioni relative allo spostamento, alla creazione e al disassemblaggio dei pallet
 - **CONS_MATERIALI_TSICOD_TO_CHECK**: specifica il valore del campo TSICOD_0 da controllare nella sezione CONSUMO MATERIALI; una corrispondenza cambierà la gestione delle quantità e dell'unità di misura da STU a PCU 
-
+- **DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE**: indica la tolleranza accettata all'inserimento di una quantità nella sezione Dichiarazione di Produzione;
+- **DICHIARAZIONE_PRODUZIONE_CHECK_TOLERANCE**: il valore True fa sì che al caricamento ed alla conferma di una quantità nella sezione Dichiarazione di Produzione venga controllato che la quantità a schermo sia all'interno della tolleranza percentuale definita con la costante *DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE*;
 ### Invio mail 
 
 - **MAIL_SMTP:** host SMTP
