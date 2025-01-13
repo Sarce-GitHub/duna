@@ -18,7 +18,7 @@
     <asp:HiddenField ID="hf_ODP" runat="server" />
     <asp:HiddenField ID="hf_QTY" runat="server" />
     <asp:HiddenField ID="hf_PALNUM" runat="server" />
-
+    <asp:HiddenField ID="hf_MFGITMQTY" runat="server" />
 
 
     <div class="row">
@@ -39,7 +39,7 @@
         <div class="row bg-light-grey pb-3">
             <div class="col-5 col-md-5">
                 <span class="font-small"><i>QTA</i></span><br />
-                <asp:TextBox runat="server" ID="txt_qta" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txt_qta" CssClass="form-control" AutoPostBack="true" OnTextChanged="txt_qta_TextChanged"></asp:TextBox>
             </div>
             <div class="col-3 col-md-2">
                 <span class="font-small"><i>UM</i></span><br />
