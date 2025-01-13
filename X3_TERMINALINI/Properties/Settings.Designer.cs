@@ -314,7 +314,7 @@ namespace X3_TERMINALINI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.001")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public decimal DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE {
             get {
                 return ((decimal)(this["DICHIARAZIONE_PRODUZIONE_TOLERANCE_PERCENTAGE"]));
