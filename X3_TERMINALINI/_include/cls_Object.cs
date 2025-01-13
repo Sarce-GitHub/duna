@@ -923,6 +923,7 @@ namespace X3_TERMINALINI
         public string ITMDES1_0 { get; set; }
         public string PCU_0 { get; set; }
         public decimal PCUSTUCOE_0 { get; set; }
+        public decimal UOMEXTQTY_0 { get; set; }
 
         private decimal _lastre;
         public decimal LASTRE
@@ -945,6 +946,7 @@ namespace X3_TERMINALINI
             STU_0 = "";
             EXTQTY_0 = 0;
             RMNEXTQTY_0 = 0;
+            UOMEXTQTY_0 = 0;
 
             //PROPRIETA' ITMMASTER
             ITMDES1_0 = "";
@@ -1018,6 +1020,21 @@ namespace X3_TERMINALINI
                 return RETQTY_0 - USEQTY_0;
             }
         }
+    }
+
+    public class Obj_YCONSMAT
+    {
+        public string MFGNUM_0 { get; set; }
+        public decimal USEQTY_0 { get; set; }
+        public decimal STDQTY_0 { get; set; }
+
+        public Obj_YCONSMAT()
+        {
+            MFGNUM_0 = "";
+            USEQTY_0 = 0;
+            STDQTY_0 = 0;
+        }
+
     }
     #endregion
 

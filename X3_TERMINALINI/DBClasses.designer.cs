@@ -240,6 +240,14 @@ namespace X3_TERMINALINI
 				return this.GetTable<YTSBARCODE>();
 			}
 		}
+		
+		public System.Data.Linq.Table<YCONSMAT> YCONSMAT
+		{
+			get
+			{
+				return this.GetTable<YCONSMAT>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute()]
@@ -7971,6 +7979,8 @@ namespace X3_TERMINALINI
 		
 		private decimal _RMNEXTQTY_0;
 		
+		private decimal _UOMEXTQTY_0;
+		
 		public MFGITM()
 		{
 		}
@@ -8099,6 +8109,22 @@ namespace X3_TERMINALINI
 				if ((this._RMNEXTQTY_0 != value))
 				{
 					this._RMNEXTQTY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UOMEXTQTY_0")]
+		public decimal UOMEXTQTY_0
+		{
+			get
+			{
+				return this._UOMEXTQTY_0;
+			}
+			set
+			{
+				if ((this._UOMEXTQTY_0 != value))
+				{
+					this._UOMEXTQTY_0 = value;
 				}
 			}
 		}
@@ -8585,6 +8611,69 @@ namespace X3_TERMINALINI
 				if ((this._BARCODE_0 != value))
 				{
 					this._BARCODE_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class YCONSMAT
+	{
+		
+		private string _MFGNUM_0;
+		
+		private decimal _USEQTY_0;
+		
+		private decimal _STDQTY_0;
+		
+		public YCONSMAT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFGNUM_0", CanBeNull=false)]
+		public string MFGNUM_0
+		{
+			get
+			{
+				return this._MFGNUM_0;
+			}
+			set
+			{
+				if ((this._MFGNUM_0 != value))
+				{
+					this._MFGNUM_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USEQTY_0")]
+		public decimal USEQTY_0
+		{
+			get
+			{
+				return this._USEQTY_0;
+			}
+			set
+			{
+				if ((this._USEQTY_0 != value))
+				{
+					this._USEQTY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STDQTY_0")]
+		public decimal STDQTY_0
+		{
+			get
+			{
+				return this._STDQTY_0;
+			}
+			set
+			{
+				if ((this._STDQTY_0 != value))
+				{
+					this._STDQTY_0 = value;
 				}
 			}
 		}
