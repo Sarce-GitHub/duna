@@ -66,6 +66,17 @@ namespace X3_TERMINALINI.spedizione
             //List<Obj_YTSORDINEAPE> Lista = _SQL.Obj_YTSORDINEAPE_Spedizione(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA,_DATE_A, true).ToList();
             List<Obj_YTSALLORD> Lista = _SQL.Obj_YTSALLORD_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A)
                                         .Where(x => (string.IsNullOrEmpty(_SOHNUM) || x.VCRNUM_0 == _SOHNUM) && x.LOC_0 == Properties.Settings.Default.SPED_Ubic)
+                                        .OrderBy(x =>
+                                        {
+                                            if (long.TryParse(x.PALNUM_0, out long parsedValue))
+                                            {
+                                                return parsedValue;
+                                            }
+                                            else
+                                            {
+                                                return long.MaxValue; // TO ENSURE NON PARSABLE VALUES GO LAST
+                                            }
+                                        })
                                         .ToList();
             if (Lista.Count > 0)
             {
