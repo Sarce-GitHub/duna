@@ -175,24 +175,23 @@ namespace X3_TERMINALINI.spedizione
                                 }
                             }
                         }
-
                     }
-
-                    //TOFIX: LOGICA VOLUTA PER STAMPA ERRATA ETICHETTE
-                    /******************************************************************************************************************/
-                    if(Request.QueryString["PALNUM"].StartsWith("P"))
-                    {
-                        Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
-                    }
-                    /******************************************************************************************************************/
-                    Response.Redirect("Ordine.aspx", true);
-
-
                 }
                 catch (Exception ex)
                 {
                     frm_error.Text = ex.Message;
+                    return;
                 }
+
+                //TOFIX: LOGICA VOLUTA PER STAMPA ERRATA ETICHETTE
+                /******************************************************************************************************************/
+                if(Request.QueryString["PALNUM"].StartsWith("P"))
+                {
+                    Response.Redirect("Ordine_Righe.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
+                }
+                /******************************************************************************************************************/
+                Response.Redirect("Ordine.aspx", false);
+                return;
             }
         }
 
