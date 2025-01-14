@@ -17,6 +17,7 @@ namespace X3_TERMINALINI.spedizione
         string _BPAADD = "";
         DateTime _DATE_DA = DateTime.MinValue;
         DateTime _DATE_A = DateTime.MinValue;
+        string _SOHNUM = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!cls_Tools.Check_User()) return;
@@ -44,6 +45,9 @@ namespace X3_TERMINALINI.spedizione
                 Response.Redirect("Ordine.aspx", true);
                 return;
             }
+            if(Arr.Length > 4) _SOHNUM = Arr[4];
+
+
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
             Ricerca();
 
@@ -77,14 +81,16 @@ namespace X3_TERMINALINI.spedizione
             string Ult_ITMREF = "";
             decimal Utl_QTY = 0;
             bool Check_QTY = false;
-            var listOrdine = _SQL.Obj_YTSORDAPE_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A).OrderBy(x => x.ITMREF_0).ThenBy(x => x.ITMREF_0).ToList();
+            var listOrdine = _SQL.Obj_YTSORDAPE_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A)
+                                            //.Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM)
+                                            .OrderBy(x => x.ITMREF_0).ThenBy(x => x.ITMREF_0).ToList();
                         
             foreach (Obj_YTSORDAPE _i in listOrdine)
             {
                 string bgColor = "";
                 //var qtyPreparata = _SQL.Obj_STOALL_Lista(_i.SOHNUM_0, _i.SOPLIN_0, _i.SOQSEQ_0, _i.ITMREF_0);
 
-                var ordini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, _i.ITMREF_0, _i.SAU_0)
+                var ordini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, _i.ITMREF_0, _i.YPCU_0)
                 .OrderBy(o => o.SHIDAT_0)
                 .ThenBy(o => o.SOHNUM_0)
                 .GroupBy(o => new { o.SOHNUM_0, o.QTYSTU_0, o.SAU_0, o.DLVQTYSTU_0, o.SHIDAT_0 })
@@ -124,6 +130,11 @@ namespace X3_TERMINALINI.spedizione
                     }
                 );
 
+                //if (_i.ITMREF_0 == "34Q035-002535") {
+                //    var a = 2; 
+                //}
+
+
                 _c = ((idx % 2) == 1 ? "bg-alt" : "");
 
                 if (_i.QTYPREP_0 > 0 && _i.QTYPREP_0 < (_i.QTY_0 - _i.DLVQTY_0)) _c = "bg-att";
@@ -132,7 +143,8 @@ namespace X3_TERMINALINI.spedizione
 
                 _h = "<div class=\"row " + _c + " \" data-itm=\""+ _i.ITMREF_0 +"\" data-sau=\""+ _i.SAU_0 +"\">";
                 _h += "<div class=\"col-12 col-md-2 check-pos\"><b>" + _i.ITMREF_0 + "</b></div>";
-                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " ("+ _i.NrRighe.ToString("0") +")</div>";
+                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " (" + _i.NrRighe.ToString("0") + ")" + " pal: " + _i.PALNUM_0 + "</div>";
+
                 _h += "<div class=\"col-4 col-md-2 text-end check-pos\">" + (_i.YQTYPCU_0).ToString("0.##") + " " + _i.YPCU_0 + "&nbsp;&nbsp;</div>";
                 //
                 if (Utl_QTY>0 && !Check_QTY)

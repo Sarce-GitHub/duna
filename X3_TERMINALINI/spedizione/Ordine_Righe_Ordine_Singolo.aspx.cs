@@ -115,9 +115,7 @@ namespace X3_TERMINALINI.spedizione
             foreach (Obj_YTSORDAPE _i in listOrdine)
             {
                 string bgColor = "";
-                //var qtyPreparata = _SQL.Obj_STOALL_Lista(_i.SOHNUM_0, _i.SOPLIN_0, _i.SOQSEQ_0, _i.ITMREF_0);
-
-                var ordini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, _i.ITMREF_0, _i.SAU_0)
+                var ordini = _SQL.Obj_YTSORDAPE_Ordini(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A, _i.ITMREF_0, _i.YPCU_0)
                                     .Where(x => string.IsNullOrEmpty(_SOHNUM) || x.SOHNUM_0 == _SOHNUM)
                                     .OrderBy(o => o.SHIDAT_0)
                                     .ThenBy(o => o.SOHNUM_0)
@@ -127,10 +125,8 @@ namespace X3_TERMINALINI.spedizione
                                         group.Key.SOHNUM_0,
                                         group.Key.QTYSTU_0,
                                         group.Key.SAU_0,
-                                        //group.Key.PALNUM_0,
                                         group.Key.DLVQTYSTU_0,
                                         group.Key.SHIDAT_0,
-
                                         Items = group.ToList()
                                     });
 
@@ -143,18 +139,6 @@ namespace X3_TERMINALINI.spedizione
                         UM = g.Select(o => o.SAU_0.ToLower()).FirstOrDefault(),
                         QtyTot = g.Sum(o => o.QTYSTU_0 - o.DLVQTYSTU_0),
                         Shidat = g.Select(o => o.SHIDAT_0).FirstOrDefault(),
-                        //PalletQuantities = g
-                        //.Where(o => !string.IsNullOrEmpty(o.PALNUM_0)) //rimuovere per vedere le qta da preparare come pallet
-                        //.GroupBy(o => !string.IsNullOrEmpty(o.PALNUM_0) ? o.PALNUM_0 : "Da preparare")
-                        //.ToDictionary(
-                        //    pg => pg.Key,
-                        //    pg => new
-                        //    {
-                        //        //palQty = pg.Sum(o => o.QTYSTU_0).ToString("0.##").ToLower(),
-                        //        //palUm = pg.Select(o => o.SAU_0).FirstOrDefault().ToLower()
-                        //    }
-                        //)
-
                     }
                 );
 
