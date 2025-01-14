@@ -190,8 +190,6 @@ namespace X3_TERMINALINI
         //Subprog SDH_SOH2SDH(IN_USR_X3, IN_USR_TERM, IN_FCY, IN_BPCORD, IN_BPAADD, IN_DATE, IN_PALNUM, OUT_OK, OUT_MESSAGE)
         public static bool WS_BollaDaOrdine(Obj_YTSUTX _USR, string _BPCORD, string _BPAADD, List<string> _PALNUM, out string _err)
         {
-
-
             _err = "";
             List<Xml_Data> src_Data = new List<Xml_Data>();
             src_Data.Add(new Xml_Data("IN_USR_X3", _USR.USR_X3_0, ""));
@@ -199,7 +197,6 @@ namespace X3_TERMINALINI
             src_Data.Add(new Xml_Data("IN_FCY", _USR.FCY_0, ""));
             src_Data.Add(new Xml_Data("IN_BPCORD", _BPCORD, ""));
             src_Data.Add(new Xml_Data("IN_BPAADD", _BPAADD, ""));
-
 
             List<List<Xml_Data>> src_PALNUM = new List<List<Xml_Data>>();
             foreach (string _p in _PALNUM)
@@ -212,11 +209,9 @@ namespace X3_TERMINALINI
                 }
             }
 
-
             CAdxResultXml result = new CAdxResultXml();
             try
             {
-
                 if (cls_WS.CallWS_TAB_GetResult(cls_Tools.Get_WS_Param(), "YTS_SO2SD", "GRP1", src_Data, "GRP2", src_PALNUM, out _err, out result))
                 {
                     XElement element = XElement.Parse(result.resultXml);
@@ -234,7 +229,6 @@ namespace X3_TERMINALINI
                             _err = "ERRORE WS - " + cls_WSX3_V9.GetNodeValue_String(_testata, "OUT_MESSAGE");
                             return false;
                         }
-
                     }
                     else
                     {
