@@ -21,6 +21,13 @@
         </div>
     </div>
     <br />
+
+    <div class="d-flex fw-bold">
+        <h3 runat="server" ID="CounterPallet"  class="text-danger">
+            Sparati: <asp:Label runat="server" ID="lbl_pacchiPreparati" CssClass="" BackColor=""></asp:Label>/<asp:Label runat="server" ID="lbl_PacchiTot" CssClass="" BackColor=""></asp:Label>
+        </h3>
+    </div>
+
     <asp:Panel runat="server" ID="pan_dati"></asp:Panel>
     <br /><br />
      <b>ATTENZIONE</b>: Questa operazione non può essere annullata
