@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -18,6 +19,7 @@ namespace X3_TERMINALINI.spedizione
         string _SOHNUM = "";
         DateTime _DATE_DA = DateTime.MinValue;
         DateTime _DATE_A = DateTime.MinValue;
+        int _PACCHIDASPARARE = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,8 +54,19 @@ namespace X3_TERMINALINI.spedizione
             lbl_ClienteAdd.Text = _BPAADD + " - " + _SQL.Obj_BPADDRESS_DESC(_BPCORD, _BPAADD);
             lbl_ClienteData.Text = _DATE_DA.ToString("dd/MM/yy") +" - " + _DATE_A.ToString("dd/MM/yy");
             Obj_Cookie.Set_String("prebolla-bc", Request.QueryString["BC"].Trim().ToUpper());
+
+            //CONTEGGIO BARRE DA SPARARE
+            if(!string.IsNullOrEmpty(_SOHNUM))
+            {
+                _PACCHIDASPARARE = _CountPacchiDaSparare(_SOHNUM, _USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A);
+            }
+            else
+            {
+                frm_error.Text = "N° Ordine non presente";
+            }
+
+            lbl_PacchiTot.Text = _PACCHIDASPARARE.ToString();
             Ricerca();
-            //
             btn_Tutto.PostBackUrl = "~/spedizione/Ordine_Spedizione_Righe_Conferma.aspx?BC=" + Request.QueryString["BC"].Trim().ToUpper();
             btn_Parziale.PostBackUrl = "~/spedizione/Ordine_Spedizione_Righe_Rimuovi.aspx?BC=" + Request.QueryString["BC"].Trim().ToUpper();
         }
@@ -79,6 +92,19 @@ namespace X3_TERMINALINI.spedizione
                                             })
 
                                          .ToList();
+
+            lbl_pacchiPreparati.Text = Lista.Count.ToString();
+
+            bool allPackagesReady = CheckAllPackagesAreReady(Lista.Count);
+            if (!allPackagesReady)
+            {
+                SpedizioneIncompleta();
+            }
+            else 
+            {
+                CounterPallet.Attributes["class"] = "text-success";
+            }
+
             if (Lista.Count > 0)
             {
                 lbl_ClienteCod.Text = Lista[0].BPCORD_0;
@@ -129,6 +155,28 @@ namespace X3_TERMINALINI.spedizione
 
         }
 
+        private int _CountPacchiDaSparare(string nOrdine, string FCY, string BPCORD, string BPADD, DateTime dataDa, DateTime dataA)
+        {
+            try
+            {
+                return _SQL.CountPacchiDaSpedire(nOrdine, FCY, BPCORD, BPADD, dataDa, dataA);
+            }
+            catch(Exception e) 
+            {
+                frm_error.Text = e.Message;
+                return -1;
+            }
+        }
 
+        private bool CheckAllPackagesAreReady(int pacchiPreparati)
+        {
+            return pacchiPreparati == _PACCHIDASPARARE;
+        }
+
+        protected void SpedizioneIncompleta()
+        {
+            frm_error.Text = "Completare la lettura dei bancali per procedere";
+            //btn_Tutto.Enabled = false;
+        }
     }
 }

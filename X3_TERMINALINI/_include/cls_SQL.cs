@@ -2703,6 +2703,32 @@ namespace X3_TERMINALINI
                
             }
         }
+        public int CountPacchiDaSpedire(string nOrdine, string SALFCY, string BPCORD, string BPADD, DateTime dataDa, DateTime dataA)
+        {
+            using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+            {
+                try
+                {
+                    var ordiniPreparati = db.YTSORDAPE
+                        .Where(a => a.SOHNUM_0 == nOrdine 
+                            && a.SALFCY_0 == SALFCY
+                            && a.BPCORD_0 == BPCORD
+                            && a.BPAADD_0 == BPADD
+                            && a.SHIDAT_0 >= dataDa && a.SHIDAT_0 <= dataA)
+                        .Select(a => new { a.SOHNUM_0, a.SHIDAT_0, a.ITMREF_0 });
+
+                    return ordiniPreparati.Count();
+                }
+                catch(Exception ex)
+                {
+                    throw;
+                }
+
+                return -1;
+            }
+        }
+
+
         //// LOAD Obj_Ytsprepord
         //public List<Obj_YTSPREPORD> Obj_YTSPREPORD_List(string IN_BPCORD, string IN_BPAADD, DateTime IN_DT)
         //{
