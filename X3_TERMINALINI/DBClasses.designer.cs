@@ -248,6 +248,14 @@ namespace X3_TERMINALINI
 				return this.GetTable<YCONSMAT>();
 			}
 		}
+		
+		public System.Data.Linq.Table<YCONSCAR> YCONSCAR
+		{
+			get
+			{
+				return this.GetTable<YCONSCAR>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute()]
@@ -8626,6 +8634,8 @@ namespace X3_TERMINALINI
 		
 		private decimal _STDQTY_0;
 		
+		private decimal _STUCOE_0;
+		
 		public YCONSMAT()
 		{
 		}
@@ -8674,6 +8684,85 @@ namespace X3_TERMINALINI
 				if ((this._STDQTY_0 != value))
 				{
 					this._STDQTY_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STUCOE_0")]
+		public decimal STUCOE_0
+		{
+			get
+			{
+				return this._STUCOE_0;
+			}
+			set
+			{
+				if ((this._STUCOE_0 != value))
+				{
+					this._STUCOE_0 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
+	public partial class YCONSCAR
+	{
+		
+		private string _MFGNUM_0;
+		
+		private int _AVA_PREV_0;
+		
+		private int _AVA_TOT_0;
+		
+		public YCONSCAR()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MFGNUM_0", CanBeNull=false)]
+		public string MFGNUM_0
+		{
+			get
+			{
+				return this._MFGNUM_0;
+			}
+			set
+			{
+				if ((this._MFGNUM_0 != value))
+				{
+					this._MFGNUM_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AVA_PREV_0")]
+		public int AVA_PREV_0
+		{
+			get
+			{
+				return this._AVA_PREV_0;
+			}
+			set
+			{
+				if ((this._AVA_PREV_0 != value))
+				{
+					this._AVA_PREV_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AVA_TOT_0")]
+		public int AVA_TOT_0
+		{
+			get
+			{
+				return this._AVA_TOT_0;
+			}
+			set
+			{
+				if ((this._AVA_TOT_0 != value))
+				{
+					this._AVA_TOT_0 = value;
 				}
 			}
 		}

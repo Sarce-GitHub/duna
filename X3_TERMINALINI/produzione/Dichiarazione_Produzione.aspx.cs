@@ -51,7 +51,16 @@ namespace X3_TERMINALINI.produzione
                     return;
                 }
 
-                decimal qtyToSuggest = _SQL.Obj_YCONSMAT_Load(s.MFGNUM_0, out error).USEQTY_0;
+                bool isAvanzamentoCompleto = _SQL.Obj_YCONSCAR_Load(txt_Ricerca.Text.Trim().ToUpper(),out error).DIFFERENZAAVANZAMENTO <= 0 && string.IsNullOrEmpty(error);
+                if(!isAvanzamentoCompleto)
+                {
+                    SearchError();
+                    return;
+                }
+
+
+                var yconsmat = _SQL.Obj_YCONSMAT_Load(s.MFGNUM_0, out error);
+                decimal qtyToSuggest = (yconsmat.USEQTY_0 / yconsmat.STUCOE_0);
                 if (!string.IsNullOrEmpty(error))
                 {
                     SearchError();
