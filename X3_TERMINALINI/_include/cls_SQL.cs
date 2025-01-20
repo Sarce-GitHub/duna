@@ -3305,6 +3305,7 @@ namespace X3_TERMINALINI
                                  MFGNUM_0 = m.MFGNUM_0,
                                  USEQTY_0 = m.USEQTY_0,
                                  STDQTY_0 = m.STDQTY_0,
+                                 STUCOE_0 = m.STUCOE_0
                              };
                     OUT_Obj = _i.FirstOrDefault();
 
@@ -3324,6 +3325,44 @@ namespace X3_TERMINALINI
                 error = ex.Message;
                 return new Obj_YCONSMAT();
             }
+        }
+
+        public Obj_YCONSCAR Obj_YCONSCAR_Load(string nOrdine, out string error)
+        {
+            Obj_YCONSCAR OUT_Obj = new Obj_YCONSCAR();
+            error = "";
+
+            try
+            {
+                using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+                {
+                    var _i = from m in db.YCONSCAR
+                             where m.MFGNUM_0 == nOrdine
+                             select new Obj_YCONSCAR
+                             {
+                                 MFGNUM_0 = m.MFGNUM_0,
+                                 AVA_PREV = m.AVA_PREV_0,
+                                 AVA_TOT = m.AVA_TOT_0,
+                             };
+                    OUT_Obj = _i.FirstOrDefault();
+
+                    if (OUT_Obj != null && OUT_Obj.DIFFERENZAAVANZAMENTO <= 0)
+                    {
+                        return OUT_Obj;
+                    }
+                    else
+                    {
+                        error = "Risultano materiali non scaricati";
+                        return new Obj_YCONSCAR();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return new Obj_YCONSCAR() { };
+            }
+
         }
 
         #endregion

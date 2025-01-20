@@ -384,7 +384,7 @@
       <Column Name="STU_0" Type="System.String" CanBeNull="false" />
       <Column Name="EXTQTY_0" Type="System.Decimal" CanBeNull="false" />
       <Column Name="RMNEXTQTY_0" Type="System.Decimal" CanBeNull="false" />
-      <Column Member="UOMEXTQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="UOMEXTQTY_0" Type="System.Decimal" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="" Member="MFGMAT">
@@ -430,9 +430,17 @@
   </Table>
   <Table Name="" Member="YCONSMAT">
     <Type Name="YCONSMAT">
+      <Column Name="MFGNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="USEQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="STDQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="STUCOE_0" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="YCONSCAR">
+    <Type Name="YCONSCAR">
       <Column Member="MFGNUM_0" Type="System.String" CanBeNull="false" />
-      <Column Member="USEQTY_0" Type="System.Decimal" CanBeNull="false" />
-      <Column Member="STDQTY_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="AVA_PREV_0" Type="System.Int32" CanBeNull="false" />
+      <Column Member="AVA_TOT_0" Type="System.Int32" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

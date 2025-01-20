@@ -1027,14 +1027,37 @@ namespace X3_TERMINALINI
         public string MFGNUM_0 { get; set; }
         public decimal USEQTY_0 { get; set; }
         public decimal STDQTY_0 { get; set; }
+        public decimal STUCOE_0 { get; set; }
 
         public Obj_YCONSMAT()
         {
             MFGNUM_0 = "";
             USEQTY_0 = 0;
             STDQTY_0 = 0;
+            STUCOE_0 = 0;
         }
 
+    }
+
+    public class Obj_YCONSCAR
+    {
+        public string MFGNUM_0 { get; set; }
+        public int AVA_PREV { get;set; }
+        public int AVA_TOT { get;set; }
+        public decimal DIFFERENZAAVANZAMENTO
+        {
+            get
+            {
+                return AVA_PREV - AVA_TOT;
+            }
+        }
+
+        public Obj_YCONSCAR() 
+        {
+            MFGNUM_0 = "";
+            AVA_PREV = 0;
+            AVA_TOT = 0;
+        }
     }
     #endregion
 
