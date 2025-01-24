@@ -34,6 +34,8 @@ namespace X3_TERMINALINI.produzione
                 btn_conferma.OnClientClick = ClientScript.GetPostBackEventReference(btn_conferma, "") + "; disableButton(this);";
             }
 
+            pan_data.Visible = true;
+
 
         }
 

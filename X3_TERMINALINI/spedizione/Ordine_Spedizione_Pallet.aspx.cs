@@ -29,10 +29,14 @@ namespace X3_TERMINALINI.spedizione
         {
             if (!cls_Tools.Check_User()) return;
             _USR = cls_Tools.Get_User();
-
             string[] Arr = Obj_Cookie.Get_String("prebolla-bc").ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
-            if (Arr.Length < 4 || string.IsNullOrEmpty(Request.QueryString["PALNUM"])) Response.Redirect("Ordine.aspx", true); 
+            string cookieOrdine = Obj_Cookie.Get_String("ordine-attuale");
 
+            if (Arr.Length < 4 || string.IsNullOrEmpty(Request.QueryString["PALNUM"])) 
+            { 
+                Response.Redirect("Ordine.aspx", true); 
+            }
+                    
             if (Request.QueryString["PALNUM"] != null)
             {
                 _BPCORD = Arr[0];
@@ -50,6 +54,12 @@ namespace X3_TERMINALINI.spedizione
                     _PACCHIDASPARARE = _CountPacchiDaSparare(_SOHNUM, _USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A);
                     lbl_pacchiPreparati.Text = (_CountPacchiSparati(_SOHNUM, _USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A) + 1).ToString();
                     lbl_PacchiTot.Text = _PACCHIDASPARARE.ToString();
+
+                    if(!string.IsNullOrEmpty(cookieOrdine) && cookieOrdine != _SOHNUM)
+                    {
+                        btn_Conferma.Visible = false;
+                        frm_error.Text = "Attenzione, selezionato un ordine diverso da quello selezionato in precedenza";
+                    }
                 }
 
                 lbl_pallet.Text = "PALLET: " + Request.QueryString["PALNUM"];
@@ -174,6 +184,8 @@ namespace X3_TERMINALINI.spedizione
                                     //if(!ok) throw new Exception(err);
 
                                     //QTY = QTY - _ord.QTY_MANC;
+
+                                    Obj_Cookie.Set_String("ordine-attuale", _SOHNUM);
                                 }
                                 else
                                 {

@@ -33,6 +33,33 @@ namespace X3_TERMINALINI.spedizione
         protected global::System.Web.UI.WebControls.Label frm_OK;
 
         /// <summary>
+        /// Controllo cookie_ordine_container.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cookie_ordine_container;
+
+        /// <summary>
+        /// Controllo cookie_ordine.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label cookie_ordine;
+
+        /// <summary>
+        /// Controllo reset_Cookie.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button reset_Cookie;
+
+        /// <summary>
         /// Controllo txt_RicercaBC.
         /// </summary>
         /// <remarks>
