@@ -15,7 +15,7 @@
         <div>
             <div class="row">
                 <div class="col-12 col-md-6 mt-2 fw-bold">
-                    <asp:Label runat="server" ID="lbl_ordine" ForeColor="DarkRed"></asp:Label>
+                    <asp:Label runat="server" ID="lbl_ordine" ForeColor="DarkRed" style="white-space:nowrap"></asp:Label>
                 </div>
             </div>
             <div class="row">

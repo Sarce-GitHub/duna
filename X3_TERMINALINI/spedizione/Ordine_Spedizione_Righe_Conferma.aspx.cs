@@ -188,6 +188,7 @@ namespace X3_TERMINALINI.spedizione
                 _body = _body + "INDIRIZZO: " + _BPAADD + " - " + _SQL.Obj_BPADDRESS_DESC(_BPCORD, _BPAADD) + "\r\n";
                 //
                 cls_Tools.SendMail(X3_TERMINALINI.Properties.Settings.Default.MAIL_FROM, X3_TERMINALINI.Properties.Settings.Default.MAIL_TO_DDT, "Nuova bolla terminalini: " + _err, _body, false);
+                Obj_Cookie.Set_String("ordine-attuale", "");
 
                 btn_Indietro.PostBackUrl = "~/spedizione/Ordine_Spedizione.aspx";
             }

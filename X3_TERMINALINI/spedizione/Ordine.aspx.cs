@@ -32,11 +32,8 @@ namespace X3_TERMINALINI.spedizione
             Obj_Cookie.Set_String("prebolla-palnum", "");
             _COOKIEORDINEATTUALE = Obj_Cookie.Get_String("ordine-attuale");
 
-            if(!string.IsNullOrEmpty(_COOKIEORDINEATTUALE))
-            {
-                cookie_ordine_container.Visible = true;
-                cookie_ordine.Text = _COOKIEORDINEATTUALE;
-            }
+            cookie_ordine_container.Visible = !string.IsNullOrEmpty(_COOKIEORDINEATTUALE);
+            cookie_ordine.Text = _COOKIEORDINEATTUALE;
 
             div_ricerca_generica.Visible = !bool.Parse(Properties.Settings.Default.BarCode_Only);
         }
@@ -173,6 +170,7 @@ namespace X3_TERMINALINI.spedizione
         protected void reset_Cookie_Click(object sender, EventArgs e)
         {
             Obj_Cookie.Set_String("ordine-attuale", "");
+            cookie_ordine_container.Visible = false;
             frm_error.Text = "";
         }
 
