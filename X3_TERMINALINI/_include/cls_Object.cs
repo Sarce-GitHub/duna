@@ -980,6 +980,9 @@ namespace X3_TERMINALINI
         public string PCU_0 { get; set; }
         public decimal PCUSTUCOE_0 { get; set; }
 
+        public decimal QTYSTU_0 { get; set; }
+        public decimal DISPO_0 { get; set; }
+
         //PROPRIETA' STOCK
         public string LOT_0
         {
@@ -1001,6 +1004,9 @@ namespace X3_TERMINALINI
             USEQTY_0 = 0;
             BOMSEQ_0 = 0;
             BOMOPE_0 = 0;
+
+            QTYSTU_0 = 0;
+            DISPO_0 = 0;
 
             //PROPRIETA' ITMMASTER
             ITMDES1_0 = "";

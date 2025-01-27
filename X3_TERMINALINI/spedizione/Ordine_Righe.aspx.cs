@@ -143,7 +143,7 @@ namespace X3_TERMINALINI.spedizione
 
                 _h = "<div class=\"row " + _c + " \" data-itm=\""+ _i.ITMREF_0 +"\" data-sau=\""+ _i.SAU_0 +"\">";
                 _h += "<div class=\"col-12 col-md-2 check-pos\"><b>" + _i.ITMREF_0 + "</b></div>";
-                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " (" + _i.NrRighe.ToString("0") + ")" + " pal: " + _i.PALNUM_0 + "</div>";
+                _h += "<div class=\"col-12 col-md-4 font-small check-pos\">" + _i.ITMDES_0 + " (" + _i.NrRighe.ToString("0") + ")" + " <span class=\"fw-bold\">pal: " + _i.PALNUM_0 + "</span></div>";
 
                 _h += "<div class=\"col-4 col-md-2 text-end check-pos\">" + (_i.YQTYPCU_0).ToString("0.##") + " " + _i.YPCU_0 + "&nbsp;&nbsp;</div>";
                 //

@@ -102,7 +102,8 @@ namespace X3_TERMINALINI.produzione
             lbl_materiale.Text = s.ITMREF_0 + lot + " - " + s.ITMDES1_0;
             txt_lin.Text = s.MFGLIN_0.ToString("0.###");
             txt_UM.Text = isFamigliaStatistica ? s.PCU_0 : s.STU_0;
-            txt_qta.Text = isFamigliaStatistica ? (s.RESTO / s.PCUSTUCOE_0).ToString("0.###") : s.RESTO.ToString("0.###");
+            //txt_qta.Text = isFamigliaStatistica ? (s.RESTO / s.PCUSTUCOE_0).ToString("0.###") : s.RESTO.ToString("0.###");
+            txt_qta.Text = isFamigliaStatistica ? (s.QTYSTU_0 / s.PCUSTUCOE_0).ToString("0.###") : s.QTYSTU_0.ToString("0.###");
             txt_qta.Focus();
 
             txt_ordine.Text = "";
@@ -116,6 +117,7 @@ namespace X3_TERMINALINI.produzione
             hf_ITMREF.Value = s.ITMREF_0;
             hf_STU.Value = s.STU_0;
             hf_CURRENTQTY.Value = txt_qta.Text;
+            hf_DISPQTY.Value = s.DISPO_0.ToString("0.###");
             hf_COEFF.Value = isFamigliaStatistica ? s.PCUSTUCOE_0.ToString("0.###") : 0.ToString("0.###");
             hf_TSICOD.Value = s.TSICOD_3;
             hf_LOC.Value = s.LOC_0;
@@ -163,6 +165,13 @@ namespace X3_TERMINALINI.produzione
                 decimal QTY = decimal.Parse(txt_qta.Text);
                 decimal COEFF = isFamigliaStatistica ? decimal.Parse(hf_COEFF.Value) : 1;
 
+                if(QTY > decimal.Parse(hf_DISPQTY.Value))
+                {
+                    frm_error.Text = "Quantità indicata superiore a quella disponibile a magazzino";
+                    txt_qta.Focus();
+                    return;
+                }
+
                 //if (QTY == decimal.Parse(hf_CURRENTQTY.Value))
                 //{
                 //    frm_error.Text = "Quantità non modificata";
@@ -208,6 +217,7 @@ namespace X3_TERMINALINI.produzione
             hf_ITMREF.Value = "";
             hf_STU.Value = "";
             hf_CURRENTQTY.Value = 0.ToString("0.###");
+            hf_DISPQTY.Value = 0.ToString("0.###");
             hf_COEFF.Value = 0.ToString("0.###");
             hf_TSICOD.Value = "";
             hf_LOC.Value = "";

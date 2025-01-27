@@ -15,6 +15,7 @@
     <asp:HiddenField ID="hf_STU" runat="server" />
     <asp:HiddenField ID="hf_COEFF" runat="server" />
     <asp:HiddenField ID="hf_CURRENTQTY" runat="server" />
+    <asp:HiddenField ID="hf_DISPQTY" runat="server" />
     <asp:HiddenField ID="hf_BOMSEQ" runat="server" />
     <asp:HiddenField ID="hf_OPE" runat="server" />
     <asp:HiddenField ID="hf_TSICOD" runat="server" />

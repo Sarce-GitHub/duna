@@ -421,6 +421,8 @@
       <Column Name="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
       <Column Name="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
       <Column Name="LOC_0" Type="System.String" CanBeNull="false" />
+      <Column Member="QTYSTU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="DISPO_0" Type="System.Decimal" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="" Member="YTSBARCODE">
@@ -433,14 +435,14 @@
       <Column Name="MFGNUM_0" Type="System.String" CanBeNull="false" />
       <Column Name="USEQTY_0" Type="System.Decimal" CanBeNull="false" />
       <Column Name="STDQTY_0" Type="System.Decimal" CanBeNull="false" />
-      <Column Member="STUCOE_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="STUCOE_0" Type="System.Decimal" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="" Member="YCONSCAR">
     <Type Name="YCONSCAR">
-      <Column Member="MFGNUM_0" Type="System.String" CanBeNull="false" />
-      <Column Member="AVA_PREV_0" Type="System.Int32" CanBeNull="false" />
-      <Column Member="AVA_TOT_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="MFGNUM_0" Type="System.String" CanBeNull="false" />
+      <Column Name="AVA_PREV_0" Type="System.Int32" CanBeNull="false" />
+      <Column Name="AVA_TOT_0" Type="System.Int32" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
