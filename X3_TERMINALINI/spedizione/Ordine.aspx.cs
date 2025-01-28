@@ -12,6 +12,7 @@ namespace X3_TERMINALINI.spedizione
     {
         cls_SQL _SQL = new cls_SQL();
         Obj_YTSUTX _USR = new Obj_YTSUTX();
+        string _COOKIEORDINEATTUALE = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!cls_Tools.Check_User()) return;
@@ -29,6 +30,10 @@ namespace X3_TERMINALINI.spedizione
             }
             Obj_Cookie.Set_String("prebolla-bc", "");
             Obj_Cookie.Set_String("prebolla-palnum", "");
+            _COOKIEORDINEATTUALE = Obj_Cookie.Get_String("ordine-attuale");
+
+            cookie_ordine_container.Visible = !string.IsNullOrEmpty(_COOKIEORDINEATTUALE);
+            cookie_ordine.Text = _COOKIEORDINEATTUALE;
 
             div_ricerca_generica.Visible = !bool.Parse(Properties.Settings.Default.BarCode_Only);
         }
@@ -44,6 +49,14 @@ namespace X3_TERMINALINI.spedizione
             bool isOrdine = _SQL.Obj_YTSORDAPE_Ordine_Singolo_Any(_USR.FCY_0, nOrdine, false);
             if (isOrdine)
             {
+                if (!string.IsNullOrEmpty(_COOKIEORDINEATTUALE) && _COOKIEORDINEATTUALE != nOrdine)
+                {
+                    btn_Conferma.Visible = false;
+                    txt_RicercaBC.Text = "";
+                    frm_error.Text = "Attenzione, sparato un ordine diverso da quello selezionato in precedenza";
+                    return;
+                }
+
                 string bc = "";
                 _SQL.Obj_YTSORDAPE_Ordine_Singolo_BC(_USR.FCY_0, nOrdine, false, out bc);
 
@@ -152,6 +165,13 @@ namespace X3_TERMINALINI.spedizione
                     }
                 }
             }
+        }
+
+        protected void reset_Cookie_Click(object sender, EventArgs e)
+        {
+            Obj_Cookie.Set_String("ordine-attuale", "");
+            cookie_ordine_container.Visible = false;
+            frm_error.Text = "";
         }
 
     }

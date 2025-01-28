@@ -8416,6 +8416,10 @@ namespace X3_TERMINALINI
 		
 		private string _LOC_0;
 		
+		private decimal _QTYSTU_0;
+		
+		private decimal _DISPO_0;
+		
 		public YSCARMAT()
 		{
 		}
@@ -8592,6 +8596,38 @@ namespace X3_TERMINALINI
 				if ((this._LOC_0 != value))
 				{
 					this._LOC_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTYSTU_0")]
+		public decimal QTYSTU_0
+		{
+			get
+			{
+				return this._QTYSTU_0;
+			}
+			set
+			{
+				if ((this._QTYSTU_0 != value))
+				{
+					this._QTYSTU_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DISPO_0")]
+		public decimal DISPO_0
+		{
+			get
+			{
+				return this._DISPO_0;
+			}
+			set
+			{
+				if ((this._DISPO_0 != value))
+				{
+					this._DISPO_0 = value;
 				}
 			}
 		}

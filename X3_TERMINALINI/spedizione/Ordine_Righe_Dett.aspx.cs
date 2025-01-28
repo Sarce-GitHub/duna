@@ -247,6 +247,7 @@ namespace X3_TERMINALINI.spedizione
 
                     //
                     transaction.Commit();
+                    
                     Response.Redirect("Ordine_Righe_Ordine_Singolo.aspx?BC=" + Obj_Cookie.Get_String("prebolla-bc"), false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
 

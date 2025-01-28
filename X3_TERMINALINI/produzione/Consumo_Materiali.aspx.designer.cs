@@ -105,6 +105,15 @@ namespace X3_TERMINALINI.produzione
         protected global::System.Web.UI.WebControls.HiddenField hf_CURRENTQTY;
 
         /// <summary>
+        /// Controllo hf_DISPQTY.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hf_DISPQTY;
+
+        /// <summary>
         /// Controllo hf_BOMSEQ.
         /// </summary>
         /// <remarks>

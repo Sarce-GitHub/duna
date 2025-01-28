@@ -33,6 +33,15 @@ namespace X3_TERMINALINI.spedizione
         protected global::System.Web.UI.WebControls.Label frm_error;
 
         /// <summary>
+        /// Controllo lbl_ordine.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ordine;
+
+        /// <summary>
         /// Controllo lbl_pallet.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace X3_TERMINALINI.spedizione
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_pallet;
+
+        /// <summary>
+        /// Controllo lbl_pacchiPreparati.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_pacchiPreparati;
+
+        /// <summary>
+        /// Controllo lbl_PacchiTot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_PacchiTot;
 
         /// <summary>
         /// Controllo pan_dati.

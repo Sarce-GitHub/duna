@@ -5,6 +5,15 @@
     <h4>Preparazione Ordine</h4>
     <asp:Label runat="server" ID="frm_error" ForeColor="Red"></asp:Label>
     <asp:Label runat="server" ID="frm_OK" ForeColor="DarkGreen"></asp:Label>
+
+    <div runat="server" class="row" ID="cookie_ordine_container" visible="false">
+        <div class="col-12 col-md-8 d-flex justify-content-between">
+           <%-- <span class="text-success">Ordine in preparazione: </span>--%>
+            <asp:Label runat="server" ID="cookie_ordine" CssClass="fw-bold align-self-center" ForeColor="DarkGreen" style="flex:5"></asp:Label>
+            <asp:Button runat="server" ID="reset_Cookie" CssClass="form-control btn btn-warning modal-check ms-3" style="flex:1" OnClick="reset_Cookie_Click" Text="Reset"></asp:Button>
+        </div>
+
+    </div>
     <div class="row" style="margin-bottom:20px">
         <div class="col-12"><b>Ricerca per Barcode</b></div>
         <div class="col-8 col-md-6">

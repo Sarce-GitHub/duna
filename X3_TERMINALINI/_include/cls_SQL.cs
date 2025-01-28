@@ -3275,6 +3275,8 @@ namespace X3_TERMINALINI
                                      STU_0 = m.STU_0,
                                      RETQTY_0 = m.RETQTY_0,
                                      USEQTY_0 = m.USEQTY_0,
+                                     QTYSTU_0 = m.QTYSTU_0,
+                                     DISPO_0 = m.DISPO_0,
                                      BOMOPE_0 = m.BOMOPE_0,
                                      BOMSEQ_0 = m.BOMSEQ_0,
                                      ITMDES1_0 = i.ITMDES1_0,

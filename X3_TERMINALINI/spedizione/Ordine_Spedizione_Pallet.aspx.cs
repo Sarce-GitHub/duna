@@ -19,6 +19,7 @@ namespace X3_TERMINALINI.spedizione
         string _SOHNUM = "";
         DateTime _DATE_DA = DateTime.MinValue;
         DateTime _DATE_A = DateTime.MinValue;
+        int _PACCHIDASPARARE = 0;
 
         List<Obj_STOCK>_STOCK = new List<Obj_STOCK>();
         string UBIC = Properties.Settings.Default.SPED_Ubic;
@@ -28,9 +29,14 @@ namespace X3_TERMINALINI.spedizione
         {
             if (!cls_Tools.Check_User()) return;
             _USR = cls_Tools.Get_User();
-
             string[] Arr = Obj_Cookie.Get_String("prebolla-bc").ToUpper().Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            string cookieOrdine = Obj_Cookie.Get_String("ordine-attuale");
 
+            if (Arr.Length < 4 || string.IsNullOrEmpty(Request.QueryString["PALNUM"])) 
+            { 
+                Response.Redirect("Ordine.aspx", true); 
+            }
+                    
             if (Request.QueryString["PALNUM"] != null)
             {
                 _BPCORD = Arr[0];
@@ -44,9 +50,19 @@ namespace X3_TERMINALINI.spedizione
                 if(!string.IsNullOrEmpty(_SOHNUM))
                 {
                     ordini.Where(w => w.SOHNUM_0 == _SOHNUM).ToList();
+                    lbl_ordine.Text = "ODV: " + _SOHNUM;
+                    _PACCHIDASPARARE = _CountPacchiDaSparare(_SOHNUM, _USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A);
+                    lbl_pacchiPreparati.Text = (_CountPacchiSparati(_SOHNUM, _USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A) + 1).ToString();
+                    lbl_PacchiTot.Text = _PACCHIDASPARARE.ToString();
+
+                    if(!string.IsNullOrEmpty(cookieOrdine) && cookieOrdine != _SOHNUM)
+                    {
+                        btn_Conferma.Visible = false;
+                        frm_error.Text = "Attenzione, selezionato un ordine diverso da quello selezionato in precedenza";
+                    }
                 }
 
-                lbl_pallet.Text = "PALLET:" + Request.QueryString["PALNUM"];
+                lbl_pallet.Text = "PALLET: " + Request.QueryString["PALNUM"];
                 _SQL.obj_PALNUM_GetListStock(_USR.FCY_0, Request.QueryString["PALNUM"], out _STOCK);
                 var articoliNonCompatibiliOrdine = _STOCK.Select(s => s.ITMREF_0).Except(ordini.Select(o => o.ITMREF_0));
                 var outOfStockItems = new List<string>();
@@ -63,6 +79,8 @@ namespace X3_TERMINALINI.spedizione
                 {
                     PalletNonCompatibile();
                 }
+
+                //CONTEGGIO BARRE DA SPARARE
                 CreaGriglia(articoliNonCompatibiliOrdine, outOfStockItems);
 
             }
@@ -111,7 +129,6 @@ namespace X3_TERMINALINI.spedizione
 
                     _d.InnerHtml = _d.InnerHtml + _h;
                 }
-
 
             }
             pan_dati.Controls.Add( _d );
@@ -167,6 +184,8 @@ namespace X3_TERMINALINI.spedizione
                                     //if(!ok) throw new Exception(err);
 
                                     //QTY = QTY - _ord.QTY_MANC;
+
+                                    Obj_Cookie.Set_String("ordine-attuale", _SOHNUM);
                                 }
                                 else
                                 {
@@ -205,6 +224,34 @@ namespace X3_TERMINALINI.spedizione
                 return false;
             }
             return true;
+        }
+
+        private int _CountPacchiDaSparare(string nOrdine, string FCY, string BPCORD, string BPADD, DateTime dataDa, DateTime dataA)
+        {
+            try
+            {
+                return _SQL.CountPacchiDaSpedire(nOrdine, FCY, BPCORD, BPADD, dataDa, dataA);
+            }
+            catch (Exception e)
+            {
+                frm_error.Text = e.Message;
+                return -1;
+            }
+        }
+
+        private int _CountPacchiSparati(string nOrdine, string FCY, string BPCORD, string BPADD, DateTime dataDa, DateTime dataA)
+        {
+            try
+            {
+                return _SQL.Obj_YTSALLORD_Lista(_USR.FCY_0, _BPCORD, _BPAADD, _DATE_DA, _DATE_A)
+                            .Where(x => x.LOC_0 == Properties.Settings.Default.SPED_Ubic && (string.IsNullOrEmpty(nOrdine) || x.VCRNUM_0 == nOrdine))
+                            .Count();
+            }
+            catch (Exception e)
+            {
+                frm_error.Text = e.Message;
+                return -1;
+            }
         }
 
         protected void btn_Indietro_Click(object sender, EventArgs e)

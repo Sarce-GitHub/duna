@@ -118,10 +118,10 @@
         <elementListCompartment Id="3eee17aa-9eb3-450d-b67e-60ff3f6a2a0c" absoluteBounds="7.265, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="34504103-ed90-4ef2-aea9-bc456ba7de1c" absoluteBounds="11.375, 7.75, 2, 2.9247054036458326">
+    <classShape Id="34504103-ed90-4ef2-aea9-bc456ba7de1c" absoluteBounds="10.875, 6.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/DBClassesDataContext/YSCARMAT" />
       <nestedChildShapes>
-        <elementListCompartment Id="a1fa5550-8b40-473d-b15f-2646cb9b9d42" absoluteBounds="11.39, 8.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a1fa5550-8b40-473d-b15f-2646cb9b9d42" absoluteBounds="10.89, 7.2100000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="7652fb4a-d6f4-471e-bc6f-34e3d42e8ba2" absoluteBounds="14.125, 5.75, 2, 1.0016910807291666">
