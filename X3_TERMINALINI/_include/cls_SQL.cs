@@ -3251,6 +3251,61 @@ namespace X3_TERMINALINI
             }
         }
 
+        public List<Obj_Righe_Allocazione_Odp> Obj_MFGMAT_Load_Order_Material_List(string IN_FCY, string IN_MFGNUM, out string error)
+        {
+            List<Obj_Righe_Allocazione_Odp> OUT_Obj = new List<Obj_Righe_Allocazione_Odp>();
+            error = "";
+
+            try
+            {
+                // DB
+                using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+                {
+                    var _i = from m in db.MFGMAT
+                             join s in db.STOCK on m.ITMREF_0 equals s.ITMREF_0
+                             where m.MFGNUM_0 == IN_MFGNUM && m.MFGFCY_0 == IN_FCY
+                             select new Obj_Righe_Allocazione_Odp
+                             { 
+                                 MFGFCY_0 = m.MFGFCY_0,
+                                 MFGNUM_0 = m.MFGNUM_0,
+                                 MFGLIN_0 = m.MFGLIN_0,
+                                 ITMREF_0 = m.ITMREF_0,
+                                 STU_0 = m.STU_0,
+                                 RETQTY_0 = m.RETQTY_0,
+                                 USEQTY_0 = m.USEQTY_0,
+                                 LOC_0 = s.LOC_0
+                             };
+                    OUT_Obj = _i.ToList();
+
+                    if (OUT_Obj != null)
+                    {
+                        return OUT_Obj;
+                    }
+                    else
+                    {
+                        error = "Materiale non trovato per quest'ordine";
+                        return new List<Obj_Righe_Allocazione_Odp>();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log Errore Generico
+                error = ex.Message;
+                return new List<Obj_Righe_Allocazione_Odp>();
+            }
+
+        }
+
+
+        public bool IsProdOrderValid(string IN_FCY, string IN_MFGNUM)
+        {
+            using (DBClassesDataContext db = new DBClassesDataContext(connectionSQL))
+            {
+                return db.MFGMAT.Where(w => w.MFGNUM_0 == IN_MFGNUM).Any();
+            }
+
+        }
 
         public Obj_YSCARMAT Obj_YSCARMAT_Load(string IN_FCY, string IN_MFGNUM, string IN_ITMREF, string IN_LOT, out string error)
             {

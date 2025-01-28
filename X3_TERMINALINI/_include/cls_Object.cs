@@ -829,6 +829,14 @@ namespace X3_TERMINALINI
         public string STU_0 { get; set; }
         public decimal RETQTY_0 { get; set; }
         public decimal USEQTY_0 { get; set; }
+        public decimal ALLQTY_0 { get; set; }
+        public decimal MATERIALEDAALLOCARE
+        {
+            get
+            {
+                return RETQTY_0 - USEQTY_0 - ALLQTY_0;
+            }
+        }
 
         public Obj_MFGMAT()
         {
@@ -840,8 +848,19 @@ namespace X3_TERMINALINI
             STU_0 = "";
             RETQTY_0 = 0;
             USEQTY_0 = 0;
+            ALLQTY_0 = 0;
         }
 
+    }
+
+    public class Obj_Righe_Allocazione_Odp : Obj_MFGMAT
+    {
+        public string LOC_0 { get; set; }
+
+        public Obj_Righe_Allocazione_Odp()
+        {
+            LOC_0 = "";
+        }
     }
 
     public class Obj_MFGMAT_ITMMASTER_PRODUZIONE

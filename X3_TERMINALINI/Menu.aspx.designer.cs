@@ -420,6 +420,24 @@ namespace X3_TERMINALINI
         protected global::System.Web.UI.WebControls.Button btn_Dichiarazione_Produzione;
 
         /// <summary>
+        /// Controllo div_btn_Allocazione_Materiali.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_btn_Allocazione_Materiali;
+
+        /// <summary>
+        /// Controllo btn_Allocazione_Materiali.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Allocazione_Materiali;
+
+        /// <summary>
         /// Controllo nav_MenuGen.
         /// </summary>
         /// <remarks>

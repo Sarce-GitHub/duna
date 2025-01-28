@@ -345,6 +345,54 @@ namespace X3_TERMINALINI
 
         }
 
+        public static bool WS_AllocaMateriali(string IN_STOFCY, string IN_DOC, string IN_OPE, string IN_ARTI, string IN_LOTTO, decimal IN_QTY, string IN_UBI, out string _err, out string _res)
+        {
+            _err = "";
+            _res = "";
+            List<Xml_Data> src_Data = new List<Xml_Data>();
+            src_Data.Add(new Xml_Data("IN_STOFCY", IN_STOFCY, ""));
+            src_Data.Add(new Xml_Data("IN_DOC", IN_DOC, ""));
+            src_Data.Add(new Xml_Data("IN_OPE", IN_OPE, "Integer"));
+            src_Data.Add(new Xml_Data("IN_ARTI", IN_ARTI, ""));
+            src_Data.Add(new Xml_Data("IN_LOTTO", IN_LOTTO, ""));
+            src_Data.Add(new Xml_Data("IN_QTY", IN_QTY.ToString("0.######"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_UBI", IN_UBI, ""));
+
+
+            //string xmlString = ConvertToXmlString(src_Data);
+            // _err = xmlString;
+            //return false;
+
+            CAdxResultXml result = new CAdxResultXml();
+            try
+            {
+                bool ok = cls_WS.CallWS_GetResult(cls_Tools.Get_WS_Param(), "YALL_MAT", "GRP1", src_Data, out _err, out result);
+                if (!ok)
+                {
+                    _err = _err + "<br/>Nessun risultato";
+                    if (result.messages.Length > 0) _err = _err + "<br/>" + result.messages[0].message;
+                    throw new Exception(_err);
+
+                }
+
+                string OUT_OK = GetXmlFieldValue(result.resultXml, "OUT_OK");
+                if (OUT_OK != "0")
+                {
+                    _err = GetXmlFieldValue(result.resultXml, "OUT_MESS");
+                    return false;
+                }
+
+                _res = GetXmlFieldValue(result.resultXml, "OUT_MESS");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _err = ex.Message;
+                return false;
+            }
+
+        }
+
 
         public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, string _NPACCHI, out string _err, out string _res)
         {

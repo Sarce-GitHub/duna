@@ -399,6 +399,7 @@
       <Column Name="ITMREF_0" Type="System.String" CanBeNull="false" />
       <Column Name="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
       <Column Name="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
+      <Column Member="ALLQTY_0" Type="System.Decimal" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="" Member="AVALNUM">
@@ -421,8 +422,8 @@
       <Column Name="BOMSEQ_0" Type="System.Int16" CanBeNull="false" />
       <Column Name="BOMOPE_0" Type="System.Int16" CanBeNull="false" />
       <Column Name="LOC_0" Type="System.String" CanBeNull="false" />
-      <Column Member="QTYSTU_0" Type="System.Decimal" CanBeNull="false" />
-      <Column Member="DISPO_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="QTYSTU_0" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="DISPO_0" Type="System.Decimal" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="" Member="YTSBARCODE">
