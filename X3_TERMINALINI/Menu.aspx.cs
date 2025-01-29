@@ -23,7 +23,7 @@ namespace X3_TERMINALINI
             div_btt_gen_Stock.Visible = (_u.ABIL1_0 == 2 && Request.QueryString.ToString() == "");
             div_btt_gen_Ricevimento.Visible = (_u.ABIL2_0 == 2 && Request.QueryString.ToString() == "");
             div_btt_gen_Spedizione.Visible = (_u.ABIL3_0 == 2 && Request.QueryString.ToString() == "");
-            div_btt_gen_Produzione.Visible = ((_u.ABIL4_0 == 2 || _u.ABIL5_0 == 2) && Request.QueryString.ToString() == "");
+            div_btt_gen_Produzione.Visible = ((_u.ABIL4_0 == 2 || _u.ABIL5_0 == 2 || _u.ABIL6_0 == 2) && Request.QueryString.ToString() == "");
             
             // PANNELLI MENU
             nav_stock.Visible = (_u.ABIL1_0 == 2 && Request.QueryString.ToString() == "STK");

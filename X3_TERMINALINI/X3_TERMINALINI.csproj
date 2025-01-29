@@ -110,6 +110,8 @@
     <Content Include="magazzino\GestioneNavetta.aspx" />
     <Content Include="magazzino\Ricerca.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="produzione\AllocaMateriali.aspx" />
+    <Content Include="produzione\AllocaMaterialiRighe.aspx" />
     <Content Include="produzione\Avanzamento_Completo.aspx" />
     <Content Include="produzione\Consumo_Materiali.aspx" />
     <Content Include="produzione\Dichiarazione_Produzione.aspx" />
@@ -229,6 +231,20 @@
     </Compile>
     <Compile Include="magazzino\Ricerca.aspx.designer.cs">
       <DependentUpon>Ricerca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="produzione\AllocaMateriali.aspx.cs">
+      <DependentUpon>AllocaMateriali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="produzione\AllocaMateriali.aspx.designer.cs">
+      <DependentUpon>AllocaMateriali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="produzione\AllocaMaterialiRighe.aspx.cs">
+      <DependentUpon>AllocaMaterialiRighe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="produzione\AllocaMaterialiRighe.aspx.designer.cs">
+      <DependentUpon>AllocaMaterialiRighe.aspx</DependentUpon>
     </Compile>
     <Compile Include="produzione\Avanzamento_Completo.aspx.cs">
       <DependentUpon>Avanzamento_Completo.aspx</DependentUpon>

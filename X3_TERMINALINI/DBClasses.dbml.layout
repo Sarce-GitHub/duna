@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.375, 15.375" name="DBClasses">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.375, 15.5" name="DBClasses">
   <DataContextMoniker Name="/DBClassesDataContext" />
   <nestedChildShapes>
     <classShape Id="1000178a-ff65-453e-9b16-e0cd29d5cd03" isExpanded="false" absoluteBounds="0.5, 1.375, 2, 0.45">
@@ -106,10 +106,10 @@
         <elementListCompartment Id="409fccdb-7ea1-4902-88b4-19d53b07bbb4" absoluteBounds="0.515, 9.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="417e5a57-0d91-47a6-aaca-7d1ccd2b91c7" absoluteBounds="4, 12.375, 2, 2.7324039713541666">
+    <classShape Id="417e5a57-0d91-47a6-aaca-7d1ccd2b91c7" absoluteBounds="4, 12.375, 2, 2.9247054036458326">
       <DataClassMoniker Name="/DBClassesDataContext/MFGMAT" />
       <nestedChildShapes>
-        <elementListCompartment Id="5bd28759-6731-4706-80a8-54dc55036632" absoluteBounds="4.015, 12.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5bd28759-6731-4706-80a8-54dc55036632" absoluteBounds="4.015, 12.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="982ce410-8675-4d0e-8543-69a3a4a0c317" absoluteBounds="7.25, 13.125, 2, 1.3862939453125005">

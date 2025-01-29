@@ -108,6 +108,9 @@
             <div class="col-12 col-md-4 margin-row-top" runat="server" id="div_btn_Dichiarazione_Produzione">
                 <asp:Button runat="server" ID="btn_Dichiarazione_Produzione" CssClass="form-control btn btn-info modal-check" Text="Dichiarazione Produzione" PostBackUrl="~/produzione/Dichiarazione_Produzione.aspx" UseSubmitBehavior="false"/>
             </div>
+            <div class="col-12 col-md-4 margin-row-top" runat="server" id="div_btn_Allocazione_Materiali">
+                <asp:Button runat="server" ID="btn_Allocazione_Materiali" CssClass="form-control btn btn-success modal-check" Text="Allocazione Materiali" PostBackUrl="~/produzione/AllocaMateriali.aspx" UseSubmitBehavior="false"/>
+            </div>
         </div>
 
 

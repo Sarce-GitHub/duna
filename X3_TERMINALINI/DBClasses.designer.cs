@@ -8162,6 +8162,8 @@ namespace X3_TERMINALINI
 		
 		private short _BOMOPE_0;
 		
+		private decimal _ALLQTY_0;
+		
 		public MFGMAT()
 		{
 		}
@@ -8322,6 +8324,22 @@ namespace X3_TERMINALINI
 				if ((this._BOMOPE_0 != value))
 				{
 					this._BOMOPE_0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ALLQTY_0")]
+		public decimal ALLQTY_0
+		{
+			get
+			{
+				return this._ALLQTY_0;
+			}
+			set
+			{
+				if ((this._ALLQTY_0 != value))
+				{
+					this._ALLQTY_0 = value;
 				}
 			}
 		}
