@@ -165,7 +165,7 @@ namespace X3_TERMINALINI.produzione
                 decimal QTY = decimal.Parse(txt_qta.Text);
                 decimal COEFF = isFamigliaStatistica ? decimal.Parse(hf_COEFF.Value) : 1;
 
-                if(QTY > decimal.Parse(hf_DISPQTY.Value))
+                if(QTY * COEFF > decimal.Parse(hf_DISPQTY.Value))
                 {
                     frm_error.Text = "Quantità indicata superiore a quella disponibile a magazzino";
                     txt_qta.Focus();

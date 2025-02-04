@@ -141,6 +141,15 @@ namespace X3_TERMINALINI.produzione
         protected global::System.Web.UI.WebControls.HiddenField hf_NPACCHI;
 
         /// <summary>
+        /// Controllo hf_BARCODE.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hf_BARCODE;
+
+        /// <summary>
         /// Controllo txt_Ricerca.
         /// </summary>
         /// <remarks>
