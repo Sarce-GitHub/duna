@@ -16,7 +16,6 @@ namespace X3_TERMINALINI.produzione
         bool manageTolerance = false;
         bool toleranceMessageAlreadyShown = false;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!cls_Tools.Check_User()) return;
@@ -96,7 +95,6 @@ namespace X3_TERMINALINI.produzione
                 txt_qta.Focus();
                 txt_Ricerca.Text = "";
 
-
                 hf_MFGNUM.Value = s.MFGNUM_0;
                 hf_ITMREF.Value = s.ITMREF_0;
                 hf_LOT.Value = s.LOT_0;
@@ -155,7 +153,7 @@ namespace X3_TERMINALINI.produzione
                 }
 
                 string _res = "";
-                var wsDichiarazioneProduzione = cls_TermWS.WS_DichiarazioneProduzione(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, hf_UM.Value, QTY, COEFF, "", out error, out _res);
+                var wsDichiarazioneProduzione = cls_TermWS.WS_DichiarazioneProduzione(hf_FCY.Value, hf_MFGNUM.Value, hf_ITMREF.Value, hf_LOT.Value, hf_UM.Value, QTY, COEFF, "", "", out error, out _res);
                 if (wsDichiarazioneProduzione)
                 {
                     SaveOk(_res);

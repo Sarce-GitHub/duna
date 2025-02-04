@@ -394,7 +394,7 @@ namespace X3_TERMINALINI
         }
 
 
-        public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, string _NPACCHI, out string _err, out string _res)
+        public static bool WS_AvanzamentoCompleto(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, string _NPACCHI, string _BARCODE, out string _err, out string _res)
         {
             _err = "";
             _res = "";
@@ -404,13 +404,13 @@ namespace X3_TERMINALINI
             src_Data.Add(new Xml_Data("IN_ITMREF", _ITMREF, ""));
             src_Data.Add(new Xml_Data("IN_LOT", _LOT, ""));
             src_Data.Add(new Xml_Data("IN_UDC", _UM, ""));
-            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.###"), "Decimal"));
-            src_Data.Add(new Xml_Data("IN_COEFF", _COEFF.ToString("0.###"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.######"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_COEFF", _COEFF.ToString("0.######"), "Decimal"));
             src_Data.Add(new Xml_Data("IN_PALNUM", _PALNUM, ""));
             src_Data.Add(new Xml_Data("IN_AVM", "2", "Integer"));
             src_Data.Add(new Xml_Data("IN_AVO", "2", "Integer"));
             src_Data.Add(new Xml_Data("IN_PACCHI", _NPACCHI, "Integer"));
-
+            src_Data.Add(new Xml_Data("IN_BARC", _BARCODE, ""));
 
             //string xmlString = ConvertToXmlString(src_Data);
             // _err = xmlString;
@@ -448,7 +448,7 @@ namespace X3_TERMINALINI
             src_Data.Add(new Xml_Data("IN_ITMREF", _ITMREF, ""));
             src_Data.Add(new Xml_Data("IN_LOT", _LOT, ""));
             src_Data.Add(new Xml_Data("IN_UDC", _UM, ""));
-            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.###"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.######"), "Decimal"));
             src_Data.Add(new Xml_Data("IN_LOC" , _LOC, ""));
             src_Data.Add(new Xml_Data("IN_LIN" , _LIN, "Integer"));
             src_Data.Add(new Xml_Data("IN_SEQ" , _SEQ, "Short"));
@@ -481,7 +481,7 @@ namespace X3_TERMINALINI
 
         }
 
-        public static bool WS_DichiarazioneProduzione(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, out string _err, out string _res)
+        public static bool WS_DichiarazioneProduzione(string _MFGFCY, string _MFGNUM, string _ITMREF, string _LOT, string _UM, decimal _QTY, decimal _COEFF, string _PALNUM, string _IN_BARC,  out string _err, out string _res)
         {
             _err = "";
             _res = "";
@@ -491,12 +491,12 @@ namespace X3_TERMINALINI
             src_Data.Add(new Xml_Data("IN_ITMREF", _ITMREF, ""));
             src_Data.Add(new Xml_Data("IN_LOT", _LOT, ""));
             src_Data.Add(new Xml_Data("IN_UDC", _UM, ""));
-            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.###"), "Decimal"));
-            src_Data.Add(new Xml_Data("IN_COEFF", _COEFF.ToString("0.###"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_QTA", _QTY.ToString("0.######"), "Decimal"));
+            src_Data.Add(new Xml_Data("IN_COEFF", _COEFF.ToString("0.######"), "Decimal"));
             src_Data.Add(new Xml_Data("IN_PALNUM", _PALNUM, ""));
             src_Data.Add(new Xml_Data("IN_AVM", "1", "Integer"));
             src_Data.Add(new Xml_Data("IN_AVO", "2", "Integer"));
-
+            src_Data.Add(new Xml_Data("IN_BARC", _IN_BARC, ""));
 
             //string xmlString = ConvertToXmlString(src_Data);
             // _err = xmlString;

@@ -40,6 +40,7 @@ namespace X3_TERMINALINI
             div_btn_SP_PrepPallet.Visible = !string.IsNullOrEmpty(Properties.Settings.Default.PRESPED_Ubic);
             //div_btn_Consumo_Materiali.Visible = (_u.ABIL5_0 == 2 && Request.QueryString.ToString() == "PROD");
             div_btn_Avanzamento_Completo.Visible = (_u.ABIL5_0 == 2 && Request.QueryString.ToString() == "PROD");
+            div_btn_Allocazione_Materiali.Visible = (_u.ABIL6_0 == 2 && Request.QueryString.ToString() == "PROD");
             div_btn_GS_UbicazionePallet.Visible = (_u.ABIL1_0 == 2 && bool.Parse(Properties.Settings.Default.Manage_MAG_PALLET));
             nav_Ass_Diss_Pallet.Visible = (_u.ABIL1_0 == 2 && bool.Parse(Properties.Settings.Default.Manage_MAG_PALLET));
             div_navetta.Visible = _u.ABIL1_0 == 2 && bool.Parse(Properties.Settings.Default.Manage_NAV);

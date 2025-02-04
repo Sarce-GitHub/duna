@@ -19,7 +19,7 @@
     <asp:HiddenField ID="hf_QTY" runat="server" />
     <asp:HiddenField ID="hf_PALNUM" runat="server" />
     <asp:HiddenField ID="hf_NPACCHI" runat="server" />
-
+    <asp:HiddenField ID="hf_BARCODE" runat="server" />
 
 
     <div class="row">
