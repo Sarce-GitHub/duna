@@ -24,7 +24,7 @@ namespace X3_TERMINALINI.produzione
         {
             if (!cls_Tools.Check_User()) return;
             _USR = cls_Tools.Get_User();
-            if (_USR.ABIL4_0 != 2 || _USR.ABIL5_0 != 2) Response.Redirect("AllocaMateriali.aspx", true);
+            if (_USR.ABIL6_0 != 2) Response.Redirect("AllocaMateriali.aspx", true);
             if (Request.QueryString["NOrd"] == null) Response.Redirect("AllocaMateriali.aspx", true);
             if (!Page.IsPostBack)
             {
