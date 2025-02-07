@@ -3263,7 +3263,7 @@ namespace X3_TERMINALINI
                 {
                     var _i = from m in db.MFGMAT
                              join s in db.STOCK on m.ITMREF_0 equals s.ITMREF_0
-                             where m.MFGNUM_0 == IN_MFGNUM && m.MFGFCY_0 == IN_FCY
+                             where m.MFGNUM_0 == IN_MFGNUM && m.MFGFCY_0 == IN_FCY && s.STA_0 == "A" && s.LOCTYP_0 != "SPE"
                              select new Obj_Righe_Allocazione_Odp
                              { 
                                  MFGFCY_0 = m.MFGFCY_0,
@@ -3273,7 +3273,9 @@ namespace X3_TERMINALINI
                                  STU_0 = m.STU_0,
                                  RETQTY_0 = m.RETQTY_0,
                                  USEQTY_0 = m.USEQTY_0,
-                                 LOC_0 = s.LOC_0
+                                 LOC_0 = s.LOC_0,
+                                 LOT_0 = s.LOT_0,
+                                 ALLOCABILEPERLOTTO = s.QTYSTU_0 - s.CUMALLQTY_0,
                              };
                     OUT_Obj = _i.ToList();
 
