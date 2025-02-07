@@ -8,11 +8,16 @@
     <asp:Label runat="server" ID="frm_OK" ForeColor="DarkGreen"></asp:Label>
 
     <div class="row" style="margin-bottom:20px">
-        <div class="col-12 col-md-6">
-            <span class="font-small"><i>Etichetta</i></span><br />
-            <asp:TextBox runat="server" ID="txt_Etichetta" CssClass="form-control chk-wait" AutoPostBack="true" OnTextChanged="txt_Etichetta_TextChanged"></asp:TextBox>
+        <div class="col-10 col-md-3">
+            <span class="font-small"><i>Ubicazione</i></span><br />
+            <asp:TextBox runat="server" ID="txt_Ubicazione" CssClass="form-control chk-wait" AutoPostBack="true" OnTextChanged="txt_Ubicazione_TextChanged"></asp:TextBox>
         </div>
-        <div class="col-8 col-md-4">
+
+        <div class="col-10 col-md-4">
+            <span class="font-small"><i>Etichetta</i></span><br />
+            <asp:TextBox runat="server" ID="txt_Etichetta" CssClass="form-control chk-wait" AutoPostBack="true" OnTextChanged="txt_Etichetta_TextChanged" Enabled="false"></asp:TextBox>
+        </div>
+        <div class="col-6 col-md-3">
             <span class="font-small"><i>Quantità</i></span><br />
             <asp:TextBox runat="server" ID="txt_Qta" CssClass="form-control chk-wait" AutoPostBack="true" Enabled="false"></asp:TextBox>
         </div>

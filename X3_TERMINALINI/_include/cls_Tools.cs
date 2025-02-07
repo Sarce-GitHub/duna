@@ -379,7 +379,7 @@ namespace X3_TERMINALINI
                 if (OUT_OK != "0")
                 {
                     _err = GetXmlFieldValue(result.resultXml, "OUT_MESS");
-                    return false;
+                    throw new Exception(_err);
                 }
 
                 _res = GetXmlFieldValue(result.resultXml, "OUT_MESS");

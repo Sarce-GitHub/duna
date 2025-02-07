@@ -42,6 +42,15 @@ namespace X3_TERMINALINI.produzione
         protected global::System.Web.UI.WebControls.Label frm_OK;
 
         /// <summary>
+        /// Controllo txt_Ubicazione.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Ubicazione;
+
+        /// <summary>
         /// Controllo txt_Etichetta.
         /// </summary>
         /// <remarks>

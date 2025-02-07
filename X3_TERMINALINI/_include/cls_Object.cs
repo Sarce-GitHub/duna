@@ -853,13 +853,15 @@ namespace X3_TERMINALINI
 
     }
 
-    public class Obj_Righe_Allocazione_Odp : Obj_MFGMAT
+    public class Obj_Righe_Allocazione_Odp : Obj_MFGMAT 
     {
         public string LOC_0 { get; set; }
+        public decimal ALLOCABILEPERLOTTO { get; set; }
 
         public Obj_Righe_Allocazione_Odp()
         {
             LOC_0 = "";
+            ALLOCABILEPERLOTTO = 0;
         }
     }
 
