@@ -122,7 +122,7 @@ namespace X3_TERMINALINI.produzione
             string _c = "";
 
             _h = "<div class=\"row bg-head font-small\">";
-            _h = _h + "<div class=\"col-8 col-md-8\">Etichetta</div>";
+            _h = _h + "<div class=\"col-8 col-md-8 fw-bold\">Articolo   </div>";
             //_h = _h + "<div class=\"col-4 col-md-2 text-end\">Qta Ord.</div>";
             //_h = _h + "<div class=\"col-4 col-md-2 text-end\">Qta Prep.</div>";
             _h = _h + "<div class=\"col-4 col-md-4 text-end\">Qta. Allocabile</div>";
@@ -181,6 +181,13 @@ namespace X3_TERMINALINI.produzione
                 //    if (_c == "bg-att") bgColor = "bg-light-yellow";
                 //    _h += "<div class=\"col-12 font-small" + " " + bgColor + " " + "\"><span>Ord." + ordine.Key + " " + ordine.Value.Shidat.ToString("dd/MM/yyyy") + ": " + ordine.Value.QtyTot.ToString("0.##") + ordine.Value.UM + "</span><span class=\"ms-5\">" + "</span></div> ";
                 //}
+                var bgColorSubheader =  _c == "bg-ok" ? "bg-light-green" : "bg-dark-subtle" ;
+                var suRowHeader = "<div class=\"col-12 font-small fw-bold row" + " " + bgColorSubheader + " " + "\"><div class=\"col-4 col-md-3\">Ubicazione</div><div class=\"col-4 col-md-3\">Lotto</div><div class=\"col-4 col-md-3 text-end\">Qta</div></div> ";
+                if(_i.Value.STOCK.Count() > 0)
+                {
+                    _h += suRowHeader;
+                }
+
                 foreach (var st in _i.Value.STOCK)
                 {
                     string etichetta = _i.Key + Properties.Settings.Default.Etic_Split + st.LOT_0;
@@ -192,7 +199,7 @@ namespace X3_TERMINALINI.produzione
                     {
                         _UBICAZIONI[st.LOC_0] = new List<string> { etichetta };
                     }
-                    _h += "<div class=\"col-12 font-small" + " " + bgColor + " " + "\"><span>" + st.LOC_0 + ": " + etichetta.Split('|')[1] + "; Qta. " + st.ALLOCABILEPERLOTTO.ToString("0.######") + "</span><span class=\"ms-5\">" + "</span></div> ";
+                    _h += "<div class=\"col-12 font-small row" + " " + bgColor + " " + "\"><div class=\"col-4 col-md-3\">" + st.LOC_0 + "</div><div class=\"col-4 col-md-3\">" + etichetta.Split('|')[1] + "</div><div class=\"col-4 col-md-3 text-end\">" + st.ALLOCABILEPERLOTTO.ToString("0.######") + "</div></div> ";
 
                 }
 
